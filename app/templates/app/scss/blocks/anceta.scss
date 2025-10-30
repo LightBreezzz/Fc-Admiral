@@ -1,0 +1,77 @@
+.anceta{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 78px;
+        &::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 1920px;
+        height: 854px;
+        background: url('/app/templates/app/assets/img/join-img8.png') no-repeat;
+        left: -100px;
+        top: -50px
+        }
+
+        .carta{
+            width: 750px;
+            height: 750px;
+            background-color: rgb(239, 230, 219);
+        }
+
+        .input-block{
+            width: 600px;
+
+            h3{
+                @include text(1000, 32px);
+                color: $white;
+                text-transform: uppercase;
+                text-align: center;
+                margin-bottom: 47px;
+            }
+
+            input{
+                width: 527px;
+                height: 90px;
+                border-radius: 100px;
+                background-color: #F1F1F1;
+                border: none;
+                margin-bottom: 21px;
+                @include text (400, 24px);
+                color: $black;
+                padding-left: 67px;
+            }
+            ::placeholder{
+                @include text (400, 24px);
+                color: #626262;
+            }
+
+            .btn-sign-up--btn3{
+                display: flex;
+                margin-left: 106px;
+                margin-top: 130px;
+
+            }
+
+            .anceta__phoneBtn{
+                background-color: $greenBtn;
+                height: 85px;
+                width: 85px;
+                border-radius: 100%;
+                border: none;
+                cursor: pointer;
+
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                transition: outline 0,6s;
+            }
+
+            .anceta__phoneBtn:hover{
+                  outline: 3px solid $white;
+            }
+        }
+}
