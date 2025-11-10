@@ -1,0 +1,33 @@
+.info-one{
+    position: relative;
+    margin-bottom: 308px;
+
+    &::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 1920px;
+        height: 854px;
+        background: url('/app/templates/app/assets/img//info-img4.png') no-repeat;
+        left: -92px;
+        top: 0px
+    }
+
+    &__text-block{
+        width: 823px;
+        padding-top: 141px;
+        
+        p{
+            @include text(300, 32px);
+            color: $white;
+            margin-bottom: 25px;
+        }
+          
+    }
+
+    button{
+        position: absolute;
+        right:40px;
+        bottom: 20px;
+    }
+}

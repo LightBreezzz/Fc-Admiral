@@ -1,0 +1,33 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &text1{
+        p{
+            @include text(500, 24px)
+        }
+    }
+
+    &__contacts{
+        display: flex;
+
+        img{
+            width: 63px;
+            height: 63px;
+            margin-left: 30px;
+            
+        }
+    }
+
+    &__text2{
+        margin-left: 43px;
+
+        p{
+            @include text(500, 24px)
+        }
+    }
+    &__number-p{
+        @include text(500, 25px)
+    }
+}

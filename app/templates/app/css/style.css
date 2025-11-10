@@ -1,0 +1,542 @@
+@charset "UTF-8";
+/**
+ * Сброс стилей
+ **/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Molle&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+input {
+  outline: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*Basic style*/
+body {
+  background: #FFFFFF;
+  font-family: "Manrope";
+}
+
+.container {
+  min-width: 324px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.wrap {
+  min-width: 324px;
+  max-width: 1727px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+p,
+a, h1, h2, h3 {
+  color: #000000;
+}
+
+button {
+  color: #FFFFFF;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.none {
+  display: none;
+}
+
+.btn-sign-up {
+  font-weight: 500;
+  font-size: 31px;
+  padding: 21px 107px;
+  border-radius: 100px;
+  background-color: #0000FF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: outline 0, 6s;
+}
+
+.btn-sign-up:hover {
+  outline: 2px solid #FFFFFF;
+}
+
+.btn-sign-up:active {
+  outline: 2px solid #000000;
+}
+
+.intro {
+  position: relative;
+  height: 1057px;
+}
+.intro::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 1920px;
+  height: 1009px;
+  background: url("/app/templates/app/assets/img/intro-img1.png") no-repeat;
+  left: -92px;
+  top: 0px;
+}
+.intro .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.intro .header p, .intro .header a {
+  font-weight: 500;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+.intro h1 {
+  font-weight: 1000;
+  font-size: 121px;
+  color: #FFFFFF;
+  margin-top: 356px;
+  text-transform: uppercase;
+}
+.intro h2 {
+  font-weight: 1000;
+  font-size: 71px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-top: -35px;
+}
+.intro button {
+  margin-top: 38px;
+}
+.intro .menu {
+  display: flex;
+  height: 88px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-top: 157px;
+  border-radius: 18px;
+}
+.intro .menu__items {
+  display: flex;
+  margin-left: 95px;
+}
+.intro .menu__items a {
+  font-weight: 700;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-right: 118px;
+  transition: color 0.2s;
+}
+.intro .menu__items .menu__link:hover {
+  color: #0000FF;
+}
+.intro .menu__social {
+  margin-right: 95px;
+  display: flex;
+}
+.intro .menu__social img {
+  margin-left: 30px;
+}
+
+.philosophy {
+  margin-top: 104px;
+  margin-bottom: 108px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-block-philosophy h2 {
+  font-weight: 1000;
+  font-size: 64px;
+  color: #000000;
+  line-height: 55px;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+}
+.text-block-philosophy p {
+  font-weight: 400;
+  font-size: 32px;
+  margin-top: 34px;
+}
+.text-block-philosophy img {
+  margin-left: 50px;
+}
+
+.sets {
+  height: 854px;
+  position: relative;
+  margin-bottom: 108px;
+  display: flex;
+  justify-content: end;
+}
+.sets::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 1920px;
+  height: 854px;
+  background: url("/app/templates/app/assets/img/set-img3.png") no-repeat;
+  left: -92px;
+  top: 0px;
+}
+.sets .arrow {
+  position: relative;
+}
+.sets .arrow::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 20px;
+  height: 36px;
+  background: url("/app/templates/app/assets/icon/arrow-right.svg") no-repeat;
+  left: 950px;
+  top: 420px;
+  cursor: pointer;
+}
+.sets .arrow::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 20px;
+  height: 36px;
+  background: url("/app/templates/app/assets/icon/arrow-left.svg") no-repeat;
+  right: 830px;
+  top: 400px;
+}
+.sets .text-block-sets {
+  width: 830px;
+  margin-right: 93px;
+  position: relative;
+}
+.sets .text-block-sets::before {
+  content: "2020 - 2006 г.р.";
+  font-weight: 400;
+  font-size: 40px;
+  color: #0000FF;
+  font-family: "Molle", cursive;
+  position: absolute;
+  z-index: 1;
+  width: 400px;
+  height: 400px;
+  left: 610px;
+  top: 105px;
+  transform: rotate(-5deg);
+  text-shadow: 3px -3px 5px 0 rgba(0, 0, 0, 0.49);
+}
+.sets .text-block-sets::after {
+  content: "юных";
+  font-weight: 400;
+  font-size: 60px;
+  color: #0000FF;
+  font-family: "Molle", cursive;
+  position: absolute;
+  position: absolute;
+  z-index: 1;
+  width: 400px;
+  height: 400px;
+  left: 700px;
+  top: 390px;
+  transform: rotate(-5deg);
+  text-shadow: 3px -3px 5px 0 rgba(0, 0, 0, 0.49);
+}
+.sets .text-block-sets h2 {
+  font-weight: 1000;
+  font-size: 64px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-align: end;
+  margin-top: 60px;
+}
+.sets .text-block-sets p {
+  font-weight: 400;
+  font-size: 32px;
+  color: #FFFFFF;
+  text-align: end;
+  margin-top: 30px;
+}
+
+.plus {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 108px;
+}
+.plus__item {
+  width: 380px;
+  text-align: center;
+  margin-top: 40px;
+}
+.plus__item p {
+  font-weight: 500;
+  font-size: 32px;
+  margin-top: 30px;
+}
+.plus__item img {
+  margin: 0 auto;
+}
+
+.info-one {
+  position: relative;
+  margin-bottom: 308px;
+}
+.info-one::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 1920px;
+  height: 854px;
+  background: url("/app/templates/app/assets/img//info-img4.png") no-repeat;
+  left: -92px;
+  top: 0px;
+}
+.info-one__text-block {
+  width: 823px;
+  padding-top: 141px;
+}
+.info-one__text-block p {
+  font-weight: 300;
+  font-size: 32px;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+}
+.info-one button {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+}
+
+.we-have {
+  position: relative;
+}
+.we-have::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 2200px;
+  height: 2317px;
+  background: url("/app/templates/app/assets/img/we-have-img-opacity.png") no-repeat;
+  left: -100px;
+  top: 0px;
+}
+.we-have h1 {
+  font-weight: 1000;
+  font-size: 64px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.we-have {
+  margin-bottom: 108px;
+}
+.we-have__block {
+  display: flex;
+  margin-top: 103px;
+}
+.we-have__block h2 {
+  font-weight: 1000;
+  font-size: 64px;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}
+.we-have__block p {
+  font-weight: 400;
+  font-size: 32px;
+  padding-bottom: 30px;
+}
+.we-have__block .we-have__bold {
+  font-weight: 600;
+  font-size: 32px;
+}
+.we-have__block img {
+  margin-right: 17px;
+}
+.we-have__block--two {
+  position: relative;
+}
+.we-have__block--two::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 1920px;
+  height: 854px;
+  background: url("/app/templates/app/assets/img/we-have-img6.png") no-repeat;
+  left: 1020px;
+  top: -50px;
+}
+.we-have__block--two p {
+  width: 820px;
+}
+.we-have__block--tree h2 {
+  text-align: end;
+}
+.we-have__block--tree p {
+  text-align: end;
+  padding-left: 82px;
+}
+.we-have__block--tree img {
+  margin: 0;
+  height: 517px;
+}
+
+.anceta {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 78px;
+}
+.anceta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 1920px;
+  height: 854px;
+  background: url("/app/templates/app/assets/img/join-img8.png") no-repeat;
+  left: -100px;
+  top: -50px;
+}
+.anceta .carta {
+  width: 750px;
+  height: 750px;
+  background-color: rgb(239, 230, 219);
+}
+.anceta .input-block {
+  width: 600px;
+}
+.anceta .input-block h3 {
+  font-weight: 1000;
+  font-size: 32px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 47px;
+}
+.anceta .input-block input {
+  width: 527px;
+  height: 90px;
+  border-radius: 100px;
+  background-color: #F1F1F1;
+  border: none;
+  margin-bottom: 21px;
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+  padding-left: 67px;
+}
+.anceta .input-block ::placeholder {
+  font-weight: 400;
+  font-size: 24px;
+  color: #626262;
+}
+.anceta .input-block .btn-sign-up--btn3 {
+  display: flex;
+  margin-left: 106px;
+  margin-top: 130px;
+}
+.anceta .input-block .anceta__phoneBtn {
+  background-color: #32C532;
+  height: 85px;
+  width: 85px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  transition: outline 0, 6s;
+}
+.anceta .input-block .anceta__phoneBtn:hover {
+  outline: 3px solid #FFFFFF;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footertext1 p {
+  font-weight: 500;
+  font-size: 24px;
+}
+.footer__contacts {
+  display: flex;
+}
+.footer__contacts img {
+  width: 63px;
+  height: 63px;
+  margin-left: 30px;
+}
+.footer__text2 {
+  margin-left: 43px;
+}
+.footer__text2 p {
+  font-weight: 500;
+  font-size: 24px;
+}
+.footer__number-p {
+  font-weight: 500;
+  font-size: 25px;
+}
+
+/*# sourceMappingURL=style.css.map */
