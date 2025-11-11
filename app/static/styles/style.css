@@ -136,7 +136,9 @@ body {
   z-index: -1;
   width: 1920px;
   height: 1009px;
-  background: url("/app/templates/app/assets/img/intro-img1.png") no-repeat;
+  background: url("/static/img/IGR82456 1.png") no-repeat;
+  background-size: cover;
+  background-position: center;
   left: -92px;
   top: 0px;
 }
@@ -167,36 +169,45 @@ body {
 .intro button {
   margin-top: 38px;
 }
-.intro .menu {
+.menu {
   display: flex;
   height: 88px;
   justify-content: space-between;
   align-items: center;
   background-color: #FFFFFF;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  margin-top: 157px;
+  margin-top: 24px;
   border-radius: 18px;
+  padding: 0 95px;
 }
-.intro .menu__items {
+.menu__items {
   display: flex;
-  margin-left: 95px;
 }
-.intro .menu__items a {
+.menu__items a {
   font-weight: 700;
   font-size: 24px;
   text-transform: uppercase;
   margin-right: 118px;
   transition: color 0.2s;
 }
-.intro .menu__items .menu__link:hover {
+.menu__items .menu__link:hover {
   color: #0000FF;
 }
-.intro .menu__social {
-  margin-right: 95px;
+.menu__social {
   display: flex;
 }
-.intro .menu__social img {
+.menu__social img {
   margin-left: 30px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+/* Overlap the header over the bottom of the hero by half height */
+.intro + .menu {
+  margin-top: -88px; /* half of 88px */
+  position: relative;
+  z-index: 2;
 }
 
 .philosophy {
@@ -236,10 +247,11 @@ body {
   z-index: -1;
   width: 1920px;
   height: 854px;
-  background: url("/app/templates/app/assets/img/set-img3.png") no-repeat;
+  background: url("/static/img/set-img3.png") no-repeat;
   left: -92px;
   top: 0px;
 }
+.sets::before { background: none; }
 .sets .arrow {
   position: relative;
 }
@@ -249,7 +261,7 @@ body {
   z-index: 1;
   width: 20px;
   height: 36px;
-  background: url("/app/templates/app/assets/icon/arrow-right.svg") no-repeat;
+  background: url("/static/icon/arrow-right.svg") no-repeat;
   left: 950px;
   top: 420px;
   cursor: pointer;
@@ -260,7 +272,7 @@ body {
   z-index: 1;
   width: 20px;
   height: 36px;
-  background: url("/app/templates/app/assets/icon/arrow-left.svg") no-repeat;
+  background: url("/static/icon/arrow-left.svg") no-repeat;
   right: 830px;
   top: 400px;
 }
@@ -336,6 +348,78 @@ body {
   margin: 0 auto;
 }
 
+.news-slider {
+  position: relative;
+  margin-top: 40px;
+}
+.sets .news-slider { width: 100%; margin: 0; }
+.news-viewport {
+  overflow: hidden;
+}
+.news-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+.news-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  height: 854px;
+  color: #FFFFFF;
+  padding: 40px 60px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.news-item::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.35);
+  border-radius:12px;
+}
+.news-item > * { position: relative; z-index: 1; }
+.news-content {
+  margin-left: auto;
+  max-width: 760px;
+  text-align: right;
+}
+.news-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.news-prev { left: 16px; }
+.news-next { right: 16px; }
+.news-arrow img {
+  display: none;
+}
+.news-arrow::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-right: 3px solid #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
+}
+.news-prev::before { transform: rotate(135deg); }
+.news-next::before { transform: rotate(-45deg); }
+
 .info-one {
   position: relative;
   margin-bottom: 308px;
@@ -346,7 +430,7 @@ body {
   z-index: -1;
   width: 1920px;
   height: 854px;
-  background: url("/app/templates/app/assets/img//info-img4.png") no-repeat;
+  background: url("/static/img/info-img4.png") no-repeat;
   left: -92px;
   top: 0px;
 }
@@ -375,7 +459,7 @@ body {
   z-index: -1;
   width: 2200px;
   height: 2317px;
-  background: url("/app/templates/app/assets/img/we-have-img-opacity.png") no-repeat;
+  background: url("/static/img/we-have-img-opacity.png") no-repeat;
   left: -100px;
   top: 0px;
 }
@@ -419,7 +503,7 @@ body {
   z-index: 1;
   width: 1920px;
   height: 854px;
-  background: url("/app/templates/app/assets/img/we-have-img6.png") no-repeat;
+  background: url("/static/img/we-have-img6.png") no-repeat;
   left: 1020px;
   top: -50px;
 }
@@ -450,7 +534,7 @@ body {
   z-index: -1;
   width: 1920px;
   height: 854px;
-  background: url("/app/templates/app/assets/img/join-img8.png") no-repeat;
+  background: url("/static/img/join-img8.png") no-repeat;
   left: -100px;
   top: -50px;
 }
@@ -508,6 +592,64 @@ body {
 }
 .anceta .input-block .anceta__phoneBtn:hover {
   outline: 3px solid #FFFFFF;
+}
+
+.branch-select {
+  position: relative;
+  width: 500px;
+  height: 90px;
+  margin-bottom: 21px;
+}
+.branch-select__control {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-color: #F1F1F1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px 0 67px;
+  cursor: pointer;
+}
+.branch-select__value {
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+}
+.branch-select__arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 12px solid #9C9C9C; /* arrow pointing right */
+  margin-left: 16px;
+  transition: transform 0.2s ease;
+}
+.branch-select__menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  padding: 8px 0;
+  display: none;
+  z-index: 5;
+}
+.branch-select[data-open="true"] .branch-select__arrow {
+  transform: rotate(90deg); /* points down when opened */
+}
+.branch-select__option {
+  padding: 18px 24px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+}
+.branch-select__option:hover {
+  background-color: #F3F3F3;
 }
 
 .footer {

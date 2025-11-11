@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fk Admiral</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
     <!-- Первый экран -->
 
     <section class="intro wrap">
         <div class="header">
             <a href="#">
-                <img src="assets/icon/Logo.svg" alt="">
+                <img src="{% static 'icon/Logo.svg' %}" alt="">
             </a>
             <p class="header__p">м. Коломенская, м. Кленовый бульвар, м. Нагатинский затон</p>
             <a class="header__a" href="#">8 (926) 597 57 57</a>
@@ -20,21 +14,10 @@
         <h1>Адмирал-вмф</h1>
         <h2>Футбольная школа</h2>
         <button class="btn-sign-up">записаться</button>
-        <div class="menu">
-            <div class="menu__items">
-                <a class="menu__link" href="#">Главная</a>
-                <a class="menu__link" href="#">Клубы</a>
-                <a class="menu__link" href="#">Тренерский штаб</a>
-                <a class="menu__link" href="#">наши ученики</a>
-            </div>
-            <div class="menu__social">
-                <a href=""><img src="assets/icon/WhatsApp icon.svg" alt=""></a>
-                <a href=""><img src="assets/icon/Wk icon.svg" alt=""></a>
-                <a href=""><img src="assets/icon/Tg icon.svg" alt=""></a>
-            </div>
-        </div>
     </section>
 <!-- Первый экран -->
+
+{% include 'includes/header.html' %}
 
 <!-- Второй экран -->
     <section class="philosophy wrap">
@@ -51,24 +34,57 @@
                 <span class="text-block-philosophy_p bold">Главная задача нашей школы - воспитание и обучение футболиста,</span>
                 который станет полноценным, сильным и здоровым членом общества.</p>
         </div>
-        <img src="assets/img/philosof-img2.png" alt="">
+        <img src="{% static 'img/philosof-img2.png' %}" alt="">
     </section>
 <!-- Второй экран -->
 
 <!-- Третий экран -->
     <section class="sets wrap">
         <div class="arrow"></div>
-        <div class="text-block-sets">
-            <h2 class="text-block-sets__h2">набор воспитанников</h2>
-            <p>Начало учебного года - это лучшее время <br> начать осваивать новый вид спорта, и <br> футбол - отличный выбор.</p>
-            <h2>мы приглашаем футболистов</h2>
-            <p>
-                в одно из наших отделений: <br>
-                "Адмирал Арена" (ул. Затонная, д.22) <br>
-                Школа Nº463 (ул. Новинки, д.8) <br>
-                Откройте для себя удивительный мир <br>
-                футбола вместе с нами!
-            </p>
+
+        <div class="news-slider">
+            <button class="news-arrow news-prev" type="button" aria-label="previous">
+                <img src="{% static 'icon/arrow-left.svg' %}" alt="">
+            </button>
+            <div class="news-viewport">
+                <div class="news-track">
+                    <div class="news-item" style="background-image:url('{% static 'img/set-img3.png' %}')">
+                        <div class="text-block-sets news-content">
+                            <h2 class="text-block-sets__h2">набор воспитанников</h2>
+                            <p>Начало учебного года - это лучшее время <br> начать осваивать новый вид спорта, и <br> футбол - отличный выбор.</p>
+                            <h2>мы приглашаем футболистов</h2>
+                            <p>
+                                в одно из наших отделений: <br>
+                                "Адмирал Арена" (ул. Затонная, д.22) <br>
+                                Школа Nº463 (ул. Новинки, д.8) <br>
+                                Откройте для себя удивительный мир <br>
+                                футбола вместе с нами!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="news-item" style="background-image:url('{% static 'img/we-have-img6.png' %}')">
+                        <div class="news-content">
+                            <h3>лента новостей 1</h3>
+                            <p>Здесь будет карточка новости или блок новостей.</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <h3>лента новостей 2</h3>
+                        <p>Здесь будет карточка новости или блок новостей.</p>
+                    </div>
+                    <div class="news-item">
+                        <h3>лента новостей 3</h3>
+                        <p>Здесь будет карточка новости или блок новостей.</p>
+                    </div>
+                    <div class="news-item">
+                        <h3>лента новостей 4</h3>
+                        <p>Здесь будет карточка новости или блок новостей.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="news-arrow news-next" type="button" aria-label="next">
+                <img src="{% static 'icon/arrow-right.svg' %}" alt="">
+            </button>
         </div>
     </section>
 <!-- Третий экран -->
@@ -76,35 +92,35 @@
 <!-- Четвертый экран -->
     <section class="plus wrap">
         <div class="plus__item">
-            <img src="assets/icon/plus/one.svg" alt="">
+            <img src="{% static 'icon/plus/one.svg' %}" alt="">
             <p>Современная методика подготовки</p>
         </div>
         <div class="plus__item">
-            <img src="assets/icon/plus/two.svg" alt="">
+            <img src="{% static 'icon/plus/two.svg' %}" alt="">
             <p>Работаем с 2009 года</p>
         </div>
         <div class="plus__item">
-            <img src="assets/icon/plus/tree.svg" alt="">
+            <img src="{% static 'icon/plus/tree.svg' %}" alt="">
             <p>Удобные локации</p>
         </div>
         <div class="plus__item">
-            <img src="assets/icon/plus/four.svg" alt="">
+            <img src="{% static 'icon/plus/four.svg' %}" alt="">
             <p>Современный инвентарь</p>
         </div>
         <div class="plus__item">
-            <img src="assets/icon/plus/five.svg" alt="">
+            <img src="{% static 'icon/plus/five.svg' %}" alt="">
             <p>С каждой командой работают два тренера</p>
         </div>
         <div class="plus__item">
-            <img src="assets/icon/plus/six.svg" alt="">
+            <img src="{% static 'icon/plus/six.svg' %}" alt="">
             <p>Школа вратарей</p>
         </div>
         <div class="plus__item">
-            <img src="assets/icon/plus/seven.svg" alt="">
+            <img src="{% static 'icon/plus/seven.svg' %}" alt="">
             <p>Учебно-тренировочные сборы</p>
         </div>
         <div class="plus__item">
-            <img src="assets/icon/plus/eigth.svg" alt="">
+            <img src="{% static 'icon/plus/eigth.svg' %}" alt="">
             <p>Регулярное участие в чемпионатах и турнирах</p>
         </div>
     </section>
@@ -123,7 +139,7 @@
 <section class="we-have wrap">
     <h1 class="we-have-h1">У нас</h1>
     <div class="we-have__block we-have__block--one">
-        <img src="assets/img/we-have-img5.png" alt="">
+        <img src="{% static 'img/we-have-img5.png' %}" alt="">
         <div class="text">
             <h2>Школа вратарей</h2>
             <p> <span class="we-have__bold">Вратарь - особенный игрок в команде.</span></p>
@@ -139,7 +155,7 @@
         </div>
     </div>
     <div class="we-have__block we-have__block--tree">
-        <img src="assets/img/we-have-img7.png" alt="">
+        <img src="{% static 'img/we-have-img7.png' %}" alt="">
         <div class="text">
             <h2>Совершенствование офп</h2>
             <p>Футбол - это спорт, который требует не только быстроты и оригинальности мышления, но и отличной физической формы.</p>
@@ -147,6 +163,7 @@
         </div>
     </div>
 </section>
+
 
 <section class="anceta wrap">
     <div class="carta"></div>
@@ -158,34 +175,97 @@
         <input type="text"  placeholder="Контактный телефон*">
         <input type="text" placeholder="ФИО ребенка*">
         <input type="text" placeholder="Дата рождения*">
+            <div class="branch-select" data-open="false">
+                <div class="branch-select__control">
+                    <span class="branch-select__value">Коломенская</span>
+                    <span class="branch-select__arrow"></span>
+                </div>
+                <ul class="branch-select__menu">
+                    <li class="branch-select__option" data-value="Коломенская">Коломенская</li>
+                    <li class="branch-select__option" data-value="Царицино">Царицино</li>
+                </ul>
+            </div>
 
         <button class="btn-sign-up btn-sign-up--btn3">записаться</button>
         <button class="anceta__phoneBtn">
-            <img src="assets/icon/phone.svg" alt="">
+            <img src="{% static 'icon/phone.svg' %}" alt="">
         </button>
     </div>
 
 
 </section>
+{% endblock %}
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    /* Branch select */
+    const select = document.querySelector('.branch-select');
+    if (!select) return;
+    const control = select.querySelector('.branch-select__control');
+    const valueEl = select.querySelector('.branch-select__value');
+    const menu = select.querySelector('.branch-select__menu');
+    const options = select.querySelectorAll('.branch-select__option');
 
-<section class="footer wrap">
-    <div class="footer__text1">
-        <p>Футбольная школа для детей</p>
-        <p>м. Коломенская,</p>
-        <p>М. Кленовый бульвар,</p>
-        <p>М. Нагатинский затон</p>
-    </div>
-    <a href=""><img src="assets/icon/Logo2.svg" alt=""></a>
-    <div class="footer__contacts">
-        <a href=""><img src="assets/icon/WhatsApp icon.svg" alt=""></a>
-        <a href=""><img src="assets/icon/Wk icon.svg" alt=""></a>
-        <a href=""><img src="assets/icon/Tg icon.svg" alt=""></a>
-        <div class="footer__text2">
-            <a href=""><p class="footer__number-p">8 (926) 597 57 57</p></a>
-            <a href=""><p>fc-admiral@mail.ru</p></a>
-        </div>
-    </div>
-</section>
+    function closeMenu() {
+        select.setAttribute('data-open', 'false');
+        menu.style.display = 'none';
+    }
+    function openMenu() {
+        select.setAttribute('data-open', 'true');
+        menu.style.display = 'block';
+    }
 
-</body>
-</html>
+    control.addEventListener('click', function (e) {
+        e.stopPropagation();
+        const isOpen = select.getAttribute('data-open') === 'true';
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    options.forEach(function (opt) {
+        opt.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const val = opt.getAttribute('data-value');
+            valueEl.textContent = val;
+            closeMenu();
+        });
+    });
+
+    document.addEventListener('click', function () {
+        closeMenu();
+    });
+
+    /* News slider */
+    const viewport = document.querySelector('.news-viewport');
+    const track = document.querySelector('.news-track');
+    const items = document.querySelectorAll('.news-item');
+    const prev = document.querySelector('.news-prev');
+    const next = document.querySelector('.news-next');
+    let index = 0;
+
+    function slideWidth() {
+        return viewport ? viewport.clientWidth : 0;
+    }
+    function update() {
+        const offset = -index * slideWidth();
+        if (track) track.style.transform = 'translateX(' + offset + 'px)';
+    }
+    function goNext() {
+        if (!items.length) return;
+        index = Math.min(index + 1, items.length - 1);
+        update();
+    }
+    function goPrev() {
+        index = Math.max(index - 1, 0);
+        update();
+    }
+    if (next) next.addEventListener('click', goNext);
+    if (prev) prev.addEventListener('click', goPrev);
+    window.addEventListener('resize', update);
+    update();
+});
+</script>
+{% endblock %}
