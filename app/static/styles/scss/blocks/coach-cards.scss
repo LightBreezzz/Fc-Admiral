@@ -1,0 +1,170 @@
+.coach-cards-section {
+  background: #2d5016;
+  background-image: url("/static/img/image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 60px 0;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(45, 80, 22, 0.3);
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.coach-cards {
+  &-title {
+    font-weight: 1000;
+    font-size: 64px;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  &-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: $white;
+    font-size: 24px;
+    padding: 40px;
+  }
+}
+
+.coach-card {
+  background: rgba(128, 128, 128, 0.2);
+  // backdrop-filter: blur(px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  &__photo {
+    width: 100%;
+    height: 280px;
+    background: #f0f0f0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 16px;
+  }
+
+  &__info {
+    padding: 20px;
+    text-align: left;
+  }
+
+  &__surname {
+    font-weight: 700;
+    font-size: 24px;
+    color: $white;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 20px;
+    color: $white;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  &__position {
+    font-weight: 400;
+    font-size: 16px;
+    color: $white;
+    margin-bottom: 8px;
+  }
+
+  &__qualification {
+    font-weight: 400;
+    font-size: 16px;
+    color: $white;
+    margin-bottom: 8px;
+  }
+
+  &__experience {
+    font-weight: 400;
+    font-size: 16px;
+    color: $white;
+    margin-top: 12px;
+  }
+}
+
+// Адаптивность
+@media (max-width: 1400px) {
+  .coach-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .coach-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .coach-cards-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coach-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .coach-cards-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .coach-cards-section {
+    padding: 40px 0;
+  }
+}
+

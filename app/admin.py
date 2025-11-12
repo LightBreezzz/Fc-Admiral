@@ -1,10 +1,11 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from .models import Coach, Player, Parent
 
 
 @admin.register(Coach)
 class CoachAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'position', 'qualification', 'work_experience')
+    list_display = ('full_name', 'position', 'qualification', 'work_start_year', 'photo_preview')
     list_filter = ('position', 'qualification')
     search_fields = ('full_name', 'position', 'qualification')
     ordering = ('full_name',)
@@ -14,17 +15,31 @@ class CoachAdmin(admin.ModelAdmin):
             'fields': ('full_name', 'position')
         }),
         ('Профессиональные данные', {
-            'fields': ('qualification', 'work_experience')
+            'fields': ('qualification', 'work_start_year')
         }),
         ('Фотография', {
-            'fields': ('photo',)
+            'fields': ('photo', 'photo_preview'),
+            'description': 'Загрузите фотографию тренера. Поддерживаются форматы: JPG, PNG, GIF.'
         }),
     )
+    
+    readonly_fields = ('photo_preview',)
+    
+    def photo_preview(self, obj):
+        """Превью фотографии в админке"""
+        if obj.photo:
+            return format_html(
+                '<img src="{}" style="max-height: 200px; max-width: 200px; border-radius: 4px;" />',
+                obj.photo.url
+            )
+        return format_html('<span style="color: #999;">Фотография не загружена</span>')
+    
+    photo_preview.short_description = 'Превью фотографии'
 
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'birth_date', 'age', 'coach')
+    list_display = ('full_name', 'birth_date', 'age', 'coach', 'photo_preview')
     list_filter = ('coach', 'birth_date')
     search_fields = ('full_name',)
     ordering = ('full_name',)
@@ -38,9 +53,23 @@ class PlayerAdmin(admin.ModelAdmin):
             'fields': ('coach',)
         }),
         ('Фотография', {
-            'fields': ('photo',)
+            'fields': ('photo', 'photo_preview'),
+            'description': 'Загрузите фотографию игрока. Поддерживаются форматы: JPG, PNG, GIF.'
         }),
     )
+    
+    readonly_fields = ('photo_preview',)
+    
+    def photo_preview(self, obj):
+        """Превью фотографии в админке"""
+        if obj.photo:
+            return format_html(
+                '<img src="{}" style="max-height: 200px; max-width: 200px; border-radius: 4px;" />',
+                obj.photo.url
+            )
+        return format_html('<span style="color: #999;">Фотография не загружена</span>')
+    
+    photo_preview.short_description = 'Превью фотографии'
 
 
 @admin.register(Parent)

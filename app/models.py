@@ -1,5 +1,8 @@
 from django.db import models
-from django.core.validators import RegexValidator
+from django.core.validators import (
+    RegexValidator, MinValueValidator, MaxValueValidator
+)
+from datetime import datetime
 
 
 class Coach(models.Model):
@@ -7,10 +10,24 @@ class Coach(models.Model):
     full_name = models.CharField(max_length=200, verbose_name="ФИО")
     position = models.CharField(max_length=100, verbose_name="Должность")
     qualification = models.CharField(
-        max_length=200, verbose_name="Квалификация"
+        max_length=200, verbose_name="Лицензия"
     )
-    work_experience = models.PositiveIntegerField(
-        verbose_name="Опыт работы (лет)"
+    education = models.CharField(
+        max_length=200, verbose_name="Образование", blank=True, null=True
+    )
+    work_start_year = models.IntegerField(
+        verbose_name="Опыт работы (с года)",
+        help_text="Год начала работы тренером",
+        validators=[
+            MinValueValidator(
+                1950, message="Год не может быть раньше 1950"
+            ),
+            MaxValueValidator(
+                datetime.now().year,
+                message="Год не может быть больше текущего"
+            )
+        ],
+        blank=True, null=True
     )
     photo = models.ImageField(
         upload_to='coaches/', blank=True, null=True, verbose_name="Фото"
@@ -29,6 +46,19 @@ class Coach(models.Model):
 
     def __str__(self):
         return self.full_name
+
+    def get_name_parts(self):
+        """Разделяет ФИО на фамилию и имя+отчество"""
+        parts = self.full_name.split()
+        if len(parts) >= 2:
+            return {
+                'surname': parts[0],
+                'name': ' '.join(parts[1:])
+            }
+        return {
+            'surname': self.full_name,
+            'name': ''
+        }
 
 
 class Player(models.Model):

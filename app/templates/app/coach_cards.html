@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Тренерский штаб -->
+<section class="coach-cards-section">
+        {% include 'includes/header.html' %}
+        <div class="coach-cards wrap">
+            <h1 class="coach-cards-title">ТРЕНЕРСКИЙ ШТАБ</h1>
+            <div class="coach-cards-grid">
+                {% for coach in coaches %}
+                <div class="coach-card">
+                    <div class="coach-card__photo">
+                        {% if coach.photo %}
+                            <img src="{{ coach.photo.url }}" alt="{{ coach.full_name }}">
+                        {% else %}
+                            <div class="coach-card__photo-placeholder"></div>
+                        {% endif %}
+                    </div>
+                    <div class="coach-card__info">
+                        {% with name_parts=coach.get_name_parts %}
+                            <h2 class="coach-card__surname">{{ name_parts.surname|upper }}</h2>
+                            {% if name_parts.name %}
+                                <h3 class="coach-card__name">{{ name_parts.name|upper }}</h3>
+                            {% endif %}
+                        {% endwith %}
+                        <p class="coach-card__position">{{ coach.position }}</p>
+                        <p class="coach-card__qualification">{{ coach.qualification }}</p>
+                        {% if coach.work_start_year %}
+                            <p class="coach-card__experience">Опыт работы с {{ coach.work_start_year }}г</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% empty %}
+                <p class="coach-cards-empty">Тренеры пока не добавлены.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Тренерский штаб -->
+{% endblock %}
