@@ -49,34 +49,11 @@
         position: relative;
 
         &::before{
-        content: '2020 - 2006 г.р.';
-        @include text (400, 40px);
-        color: $blueBtn;
-        font-family: "Molle", cursive;
-        position: absolute;
-        z-index: 1;
-        width: 400px;
-        height: 400px;
-        left: 610px;
-        top: 105px;
-        transform: rotate(-5deg);
-        text-shadow: 3px -3px 5px 0 rgba(0, 0, 0, 0.49);
+        display: none;
         }
 
         &::after{
-        content: 'юных';
-        @include text (400, 60px);
-        color: $blueBtn;
-        font-family: "Molle", cursive;
-        position: absolute;
-        position: absolute;
-        z-index: 1;
-        width: 400px;
-        height: 400px;
-        left: 700px;
-        top: 390px;
-        transform: rotate(-5deg);
-        text-shadow: 3px -3px 5px 0 rgba(0, 0, 0, 0.49);
+        display: none;
         }
 
         h2{

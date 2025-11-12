@@ -96,6 +96,19 @@ class Player(models.Model):
                 ((today.month, today.day) <
                  (self.birth_date.month, self.birth_date.day)))
 
+    def get_name_parts(self):
+        """Разделяет ФИО на фамилию и имя+отчество"""
+        parts = self.full_name.split()
+        if len(parts) >= 2:
+            return {
+                'surname': parts[0],
+                'name': ' '.join(parts[1:])
+            }
+        return {
+            'surname': self.full_name,
+            'name': ''
+        }
+
 
 class Parent(models.Model):
     """Модель родителя/пользователя"""

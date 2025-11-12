@@ -13,7 +13,7 @@
         </div>
         <h1>Адмирал-вмф</h1>
         <h2>Футбольная школа</h2>
-        <button class="btn-sign-up">записаться</button>
+        <button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
     </section>
 <!-- Первый экран -->
 
@@ -40,8 +40,6 @@
 
 <!-- Третий экран -->
     <section class="sets wrap">
-        <div class="arrow"></div>
-
         <div class="news-slider">
             <button class="news-arrow news-prev" type="button" aria-label="previous">
                 <img src="{% static 'icon/arrow-left.svg' %}" alt="">
@@ -50,15 +48,14 @@
                 <div class="news-track">
                     <div class="news-item" style="background-image:url('{% static 'img/set-img3.png' %}')">
                         <div class="text-block-sets news-content">
-                            <h2 class="text-block-sets__h2">набор воспитанников</h2>
-                            <p>Начало учебного года - это лучшее время <br> начать осваивать новый вид спорта, и <br> футбол - отличный выбор.</p>
-                            <h2>мы приглашаем футболистов</h2>
+                            <h2 class="text-block-sets__h2">НАБОР ВОСПИТАННИКОВ С 3х ЛЕТ</h2>
+                            <p>Отличительной особенностью нашей школы является круглогодичный набор юных футболистов. Вы всегда можете записаться на пробную тренировку, после которой ребенок откроет для себя новый и увлекательный мир футбола!</p>
+                            <h2 class="text-block-sets__h2">МЫ ПРИГЛАШАЕМ ФУТБОЛИСТОВ</h2>
                             <p>
                                 в одно из наших отделений: <br>
                                 "Адмирал Арена" (ул. Затонная, д.22) <br>
-                                Школа Nº463 (ул. Новинки, д.8) <br>
-                                Откройте для себя удивительный мир <br>
-                                футбола вместе с нами!
+                                Школа №0463 (ул. Новинки, д.8) <br>
+                                Откройте для себя удивительный мир футбола вместе с нами!
                             </p>
                         </div>
                     </div>
@@ -133,7 +130,7 @@
     <p>Малыши начинают играть с двух игроков в поле, и чем старше становится ребенок, тем больше игроков одновременно допускается на поле во время игры.</p>
     <p>В ФШ "Адмирал-ВМФ" юные футболисты проходят все этапы обучения, вплоть до полноформатного футбола 11х11 в старших возрастах. Это позволяет гармонично развиваться, и на финальном этапе обучения получить спортсмена, способного выступать на высоком уровне.</p>
 </div>
-<button class="btn-sign-up">записаться</button>
+<button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
 </section>
 
 <section class="we-have wrap">
@@ -165,7 +162,7 @@
 </section>
 
 
-<section class="anceta wrap">
+<section class="anceta wrap" id="anceta">
     <div class="carta"></div>
     <div class="input-block">
         <label for="FIO">
@@ -177,7 +174,7 @@
         <input type="text" placeholder="Дата рождения*">
             <div class="branch-select" data-open="false">
                 <div class="branch-select__control">
-                    <span class="branch-select__value">Коломенская</span>
+                    <span class="branch-select__value">Выбрать отделение</span>
                     <span class="branch-select__arrow"></span>
                 </div>
                 <ul class="branch-select__menu">
@@ -255,11 +252,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function goNext() {
         if (!items.length) return;
-        index = Math.min(index + 1, items.length - 1);
+        index = (index + 1) % items.length;
         update();
     }
     function goPrev() {
-        index = Math.max(index - 1, 0);
+        if (!items.length) return;
+        index = (index - 1 + items.length) % items.length;
         update();
     }
     if (next) next.addEventListener('click', goNext);
@@ -267,5 +265,19 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', update);
     update();
 });
+
+/* Scroll to anceta function */
+function scrollToAnceta() {
+    const ancetaSection = document.getElementById('anceta');
+    if (ancetaSection) {
+        const elementPosition = ancetaSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px отступ сверху
+        
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
 </script>
 {% endblock %}

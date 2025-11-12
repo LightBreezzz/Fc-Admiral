@@ -1,9 +1,9 @@
 {% load static %}
 <header class="menu wrap">
     <div class="menu__items">
-        <a class="menu__link" href="#">Главная</a>
-        <a class="menu__link" href="#">Тренерский штаб</a>
-        <a class="menu__link" href="#">Наши ученики</a>
+        <a class="menu__link" href="{% url 'index' %}">Главная</a>
+        <a class="menu__link" href="{% url 'coach_cards' %}">Тренерский штаб</a>
+        <a class="menu__link" href="{% url 'player_cards' %}">Наши ученики</a>
     </div>
     <div class="menu__social">
         <a href=""><img src="{% static 'icon/WhatsApp icon.svg' %}" alt=""></a>

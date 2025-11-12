@@ -53,6 +53,28 @@
   }
 }
 
+.school-banner {
+  text-align: center;
+  margin-bottom: 60px;
+
+  &__title {
+    font-weight: 1000;
+    font-size: 64px;
+    color: $white;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 32px;
+    color: $white;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
 .coach-card {
   background: rgba(128, 128, 128, 0.2);
   // backdrop-filter: blur(px);
@@ -151,6 +173,18 @@
   .coach-cards-title {
     font-size: 48px;
   }
+
+  .school-banner {
+    margin-bottom: 50px;
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -165,6 +199,19 @@
   
   .coach-cards-section {
     padding: 40px 0;
+  }
+
+  .school-banner {
+    margin-bottom: 40px;
+
+    &__title {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+    }
   }
 }
 

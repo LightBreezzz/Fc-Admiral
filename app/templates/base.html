@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fk Admiral</title>
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
 	<main>
@@ -13,7 +14,9 @@
         
         {% endblock %}
 	</main>
-	{% include 'includes/footer.html' %}
+	<div class="footer-wrapper">
+		{% include 'includes/footer.html' %}
+	</div>
 	{% block extra_js %}{% endblock %}
 </body>
 </html>

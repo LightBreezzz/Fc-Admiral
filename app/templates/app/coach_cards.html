@@ -1,8 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_head %}
+<link rel="preload" as="image" href="{% static 'img/image.png' %}">
+<style>
+    body { background-color: #2d5016; }
+    .footer { 
+        background-color: #FFFFFF; 
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .footer-wrapper {
+        background-color: #FFFFFF;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    footer.footer.wrap {
+        max-width: 1727px;
+        margin: 0 auto;
+    }
+</style>
+{% endblock %}
 {% block content %}
 <!-- Тренерский штаб -->
-<section class="coach-cards-section">
+<section class="coach-cards-section" style="background-color: #2d5016;">
         {% include 'includes/header.html' %}
         <div class="coach-cards wrap">
             <h1 class="coach-cards-title">ТРЕНЕРСКИЙ ШТАБ</h1>
