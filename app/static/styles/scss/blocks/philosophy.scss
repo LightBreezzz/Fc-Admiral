@@ -9,7 +9,7 @@
     
 
     h2{
-        @include text (1000, 64px);
+        @include text (900, 64px);
         color: $black;
         line-height: 55px;
         margin-bottom: 80px;
@@ -17,7 +17,7 @@
     }
  
     p{
-        @include text (400, 32px);
+        @include text (300, 32px);
         margin-top: 34px;
     }
 

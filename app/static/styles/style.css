@@ -93,13 +93,14 @@ button {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 html,
 body {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 .none {
@@ -116,6 +117,7 @@ body {
   border: none;
   cursor: pointer;
   transition: outline 0, 6s;
+  margin-left: 50px;
 }
 
 .btn-sign-up:hover {
@@ -151,20 +153,26 @@ body {
   font-weight: 500;
   font-size: 24px;
   color: #FFFFFF;
+  align-items: center;
 }
+
+.intro .header p {
+  align-items: center;
+  text-align: center;
+}
+
 .intro h1 {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 121px;
   color: #FFFFFF;
-  margin-top: 356px;
   text-transform: uppercase;
 }
 .intro h2 {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 71px;
   color: #FFFFFF;
   text-transform: uppercase;
-  margin-top: -35px;
+  margin-top: 380px;
 }
 .intro button {
   margin-top: 38px;
@@ -172,6 +180,7 @@ body {
 .menu {
   display: flex;
   height: 88px;
+  width: 95%;
   justify-content: space-between;
   align-items: center;
   background-color: #FFFFFF;
@@ -195,12 +204,17 @@ body {
 }
 .menu__social {
   display: flex;
+  margin: 30px;
+  /* margin-left: 30px; */
 }
+
 .menu__social img {
-  margin-left: 30px;
+  margin-left: 10px;
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  justify-content: center;
+
 }
 
 /* Overlap the header over the bottom of the hero by half height */
@@ -214,24 +228,31 @@ body {
   margin-top: 104px;
   margin-bottom: 108px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  width: 95%; height: 95%;
 }
 
 .text-block-philosophy h2 {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 64px;
   color: #000000;
-  line-height: 55px;
+  line-height: 65px;
   margin-bottom: 80px;
   text-transform: uppercase;
 }
 .text-block-philosophy p {
-  font-weight: 400;
+  font-weight: 200;
   font-size: 32px;
   margin-top: 34px;
 }
 .text-block-philosophy img {
-  margin-left: 50px;
+  margin-left: 80px;
+  width: 50%; 
+  height: 50%;
+}
+.photo {
+width: 100%;
+height: 100%;
 }
 
 .sets {
@@ -277,8 +298,9 @@ body {
   top: 400px;
 }
 .sets .text-block-sets {
-  width: 830px;
-  margin-right: 93px;
+  width: 100%; /* ← растягиваем на всю ширину */
+  padding: 0; /* ← убираем отступы */
+  margin: 0; /* ← убираем внешние отступы */
   position: relative;
 }
 .sets .text-block-sets::before {
@@ -288,7 +310,7 @@ body {
   display: none;
 }
 .sets .text-block-sets h2 {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 64px;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -296,7 +318,7 @@ body {
   margin-top: 60px;
 }
 .sets .text-block-sets p {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 32px;
   color: #FFFFFF;
   text-align: end;
@@ -310,17 +332,19 @@ body {
   margin-bottom: 108px;
 }
 .plus__item {
-  width: 380px;
+  width: 300px;
   text-align: center;
   margin-top: 40px;
 }
 .plus__item p {
-  font-weight: 500;
+  font-weight: 300;
   font-size: 32px;
   margin-top: 30px;
 }
 .plus__item img {
   margin: 0 auto;
+  width: 30%;
+  height: 30%;
 }
 
 .news-slider {
@@ -360,7 +384,7 @@ body {
 .news-item > * { position: relative; z-index: 1; }
 .news-content {
   margin-left: auto;
-  max-width: 760px;
+  max-width: 100%;
   text-align: right;
 }
 .news-arrow {
@@ -439,35 +463,40 @@ body {
   top: 0px;
 }
 .we-have h1 {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 64px;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 103px;
 }
 .we-have {
   margin-bottom: 108px;
+  width: 95%;
+
 }
 .we-have__block {
   display: flex;
-  margin-top: 103px;
+  /* margin-top: 103px; */
 }
 .we-have__block h2 {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 64px;
   text-transform: uppercase;
   padding-bottom: 30px;
 }
 .we-have__block p {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 32px;
   padding-bottom: 30px;
 }
 .we-have__block .we-have__bold {
-  font-weight: 600;
+  font-weight: 900;
   font-size: 32px;
 }
 .we-have__block img {
   margin-right: 17px;
+  width: 45%;
+  height: 45%;
 }
 .we-have__block--two {
   position: relative;
@@ -479,8 +508,8 @@ body {
   width: 1920px;
   height: 854px;
   background: url("/static/img/we-have-img6.png") no-repeat;
-  left: 1020px;
-  top: -50px;
+  left: 720px;
+  top: 35px;
 }
 .we-have__block--two p {
   width: 820px;
@@ -494,7 +523,15 @@ body {
 }
 .we-have__block--tree img {
   margin: 0;
-  height: 517px;
+  margin-right: 50px;
+}
+.text1 {
+  font-weight: 900;
+  font-size: 64px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  margin-top: 103px;
+  text-align: end;
 }
 
 .anceta {
@@ -514,15 +551,18 @@ body {
   top: -50px;
 }
 .anceta .carta {
-  width: 750px;
-  height: 750px;
+  width: 700px;
+  height: 700px;
+  border-radius: 30px;
+  margin-left: 50px;
   background-color: rgb(239, 230, 219);
 }
 .anceta .input-block {
   width: 600px;
+  margin-right: 50px;
 }
 .anceta .input-block h3 {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 32px;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -536,20 +576,20 @@ body {
   background-color: #F1F1F1;
   border: none;
   margin-bottom: 21px;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 24px;
   color: #000000;
   padding-left: 67px;
 }
 .anceta .input-block ::placeholder {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 24px;
   color: #626262;
 }
 .anceta .input-block .btn-sign-up--btn3 {
   display: flex;
   margin-left: 106px;
-  margin-top: 130px;
+  margin-top: 40px;
 }
 .anceta .input-block .anceta__phoneBtn {
   background-color: #32C532;
@@ -564,9 +604,80 @@ body {
   right: 0px;
   bottom: 0px;
   transition: outline 0, 6s;
+  margin-right: 50px;
 }
 .anceta .input-block .anceta__phoneBtn:hover {
   outline: 3px solid #FFFFFF;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Содержимое окна */
+.modal-content {
+  background: #FFFFFF;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #666;
+  font-weight: bold;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-content h3 {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+.modal-phone {
+  font-size: 24px;
+  font-weight: 900;
+  margin: 12px 0;
+  color: #000;
+}
+
+.modal-call-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: #0000FF;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 18px;
+  transition: background 0.2s;
+}
+
+.modal-call-btn:hover {
+  background: #0000CC;
 }
 
 .branch-select {
@@ -587,7 +698,7 @@ body {
   cursor: pointer;
 }
 .branch-select__value {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 24px;
   color: #000000;
 }
@@ -618,7 +729,7 @@ body {
 }
 .branch-select__option {
   padding: 18px 24px;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
   color: #000000;
   cursor: pointer;
@@ -686,7 +797,7 @@ body {
 }
 
 .coach-cards-title {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 64px;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -716,7 +827,7 @@ body {
 }
 
 .school-banner__title {
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 64px;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -725,7 +836,7 @@ body {
 }
 
 .school-banner__subtitle {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 32px;
   color: #FFFFFF;
   margin: 0;
@@ -795,21 +906,21 @@ body {
 }
 
 .coach-card__position {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   color: #FFFFFF;
   margin-bottom: 8px;
 }
 
 .coach-card__qualification {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   color: #FFFFFF;
   margin-bottom: 8px;
 }
 
 .coach-card__experience {
-  font-weight: 400;
+  font-weight: 300;
   font-size: 16px;
   color: #FFFFFF;
   margin-top: 12px;
@@ -869,6 +980,18 @@ body {
   .school-banner__subtitle {
     font-size: 20px;
   }
+}
+
+@font-face {
+  font-family: 'Akt';
+  font-weight: 900;
+  src: url('../fonts/AktBlack.woff2') format('woff2');
+  font-display: swap;
+}
+
+h1, h2 {
+  font-family: 'Akt', sans-serif;
+  font-weight: 900;
 }
 
 /*# sourceMappingURL=style.css.map */

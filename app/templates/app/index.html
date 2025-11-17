@@ -8,11 +8,11 @@
             <a href="#">
                 <img src="{% static 'icon/Logo.svg' %}" alt="">
             </a>
-            <p class="header__p">м. Коломенская, м. Кленовый бульвар, м. Нагатинский затон</p>
+            <p class="header__p">м. Царицыно, м. Кантемировская, м. Орехово,<br>м. Коломенская, м. Кленовый бульвар, м. Нагатинский затон</p>
             <a class="header__a" href="#">8 (926) 597 57 57</a>
         </div>
-        <h1>Адмирал-вмф</h1>
         <h2>Футбольная школа</h2>
+        <h1>Адмирал-вмф</h1>
         <button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
     </section>
 <!-- Первый экран -->
@@ -22,19 +22,17 @@
 <!-- Второй экран -->
     <section class="philosophy wrap">
         <div class="text-block-philosophy">
-            <h2 class="text-block-philosophy_h">философия <br> нашей  школы</h2>
+            <h2 class="text-block-philosophy_h">НОВОЕ ОТДЕЛЕНИЕ <br> СТАДИОН "ОГОНЁК"</h2>
             <p class="text-block-philosophy_p">
-                <span class="text-block-philosophy_p bold">Каждый тренер нашей школы знает основные фазы роста и развития юных игроков.</span>
-                Это важно, ведь любой ребенок – индивидуален. Мы уважаем особенности каждого спортсмена и не навязываем ему свою «модель» физического воспитания.
-            </p>
+                <span class="text-block-philosophy_p bold">С 5 ноября открыто новое отделение ФШ "Адмирал-ВМФ" на базе современного стадиона "Огонек"</p>
             <p class="text-block-philosophy_p">
-                <span class="text-block-philosophy_p bold">Наша модель нацелена на развитие и раскрытие потенциала молодых спортсменов.</span>
-                Мы убеждены, что результат работы тренера не измеряется количеством титулов и медалей.</p>
+                <span class="text-block-philosophy_p bold">Данное отделение станет базой для подготовки наших футболистов к участию в соревнованиях под эгидой Московской федерации футбола!</p>
             <p class="text-block_p-philosophy">
-                <span class="text-block-philosophy_p bold">Главная задача нашей школы - воспитание и обучение футболиста,</span>
-                который станет полноценным, сильным и здоровым членом общества.</p>
+                <span class="text-block-philosophy_p bold">Инфраструктура стадиона позволит осуществлять качественную подготовку спортсменов в формате 11х11 и перейти на более профессиональный уровень.</p>
         </div>
-        <img src="{% static 'img/philosof-img2.png' %}" alt="">
+        <div class="photo">
+        <img src="{% static 'img/EEES0740.png' %}" alt="">
+        </div>
     </section>
 <!-- Второй экран -->
 
@@ -145,16 +143,17 @@
     </div>
     <div class="we-have__block we-have__block--two">
         <div class="text">
-            <h2>Летние сборы и выездные турниры</h2>
+            <h2>ЛЕТНИЕ УЧЕБНО-ТРЕНИРОВОЧНЫЕ СБОРЫ</h2>
             <p>Неотъемлемой частью тренировок является получение опыта детьми в рамках соревнований.</p>
             <p>В нашей школе дети всех возрастов принимают участие в различных турнирах, где закрепляют и развивают свои футбольные навыки.</p>
             <p>Так же для наших воспитанников мы организуем летние и зимние тренировочные сборы и выездные турниры по всей России.</p>
         </div>
     </div>
+    <div class="text1"><h2>РЕГУЛЬРНАЯ ИГРОВАЯ ПРАКТИКА И</h2></div>
     <div class="we-have__block we-have__block--tree">
         <img src="{% static 'img/we-have-img7.png' %}" alt="">
         <div class="text">
-            <h2>Совершенствование офп</h2>
+            <h2>ВЫЕЗДНЫЕ ТУРНИРЫ</h2>
             <p>Футбол - это спорт, который требует не только быстроты и оригинальности мышления, но и отличной физической формы.</p>
             <p>Для своих воспитанников мы проводим дополнительные тренировки по совершенствованию общей физической подготовки, на которых под руководством специалистов наши игроки развивают силу, скорость и выносливость.</p>
         </div>
@@ -266,12 +265,45 @@ document.addEventListener('DOMContentLoaded', function () {
     update();
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneBtn = document.querySelector('.anceta__phoneBtn');
+    const modal = document.getElementById('phoneModal');
+    const closeBtn = modal.querySelector('.modal-close');
+
+    if (!phoneBtn || !modal) return;
+
+    // Открыть окно
+    phoneBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'flex';
+    });
+
+    // Закрыть по крестику
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Закрыть по клику вне окна
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Закрыть по Esc
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+        }
+    });
+});
+
 /* Scroll to anceta function */
 function scrollToAnceta() {
     const ancetaSection = document.getElementById('anceta');
     if (ancetaSection) {
         const elementPosition = ancetaSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px отступ сверху
+        const offsetPosition = elementPosition + window.pageYOffset; // 100px отступ сверху
         
         window.scrollTo({
             top: offsetPosition,
