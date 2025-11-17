@@ -2,9 +2,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 100px;
+    margin-right: 100px;
 
     &text1{
         p{
+            margin-left: 80px;
             @include text(500, 24px)
         }
     }
