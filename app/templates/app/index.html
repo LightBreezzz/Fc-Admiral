@@ -264,7 +264,7 @@
             </div>
 
             <!-- Отделение -->
-            <div class="anceta__field">
+            <div class="anceta__field{% if form.branch.errors %} has-error{% endif %}">
                 {% if form.branch.errors %}
                     <p class="form-error">{{ form.branch.errors|striptags }}</p>
                 {% endif %}
@@ -296,131 +296,132 @@
 {% endblock %}
 {% block extra_js %}
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    /* Branch select */
-    
-    /* News slider */
-    const viewport = document.querySelector('.news-viewport');
-    const track = document.querySelector('.news-track');
-    const items = document.querySelectorAll('.news-item');
-    const prev = document.querySelector('.news-prev');
-    const next = document.querySelector('.news-next');
-    let index = 0;
-    
-    function slideWidth() {
-        return viewport ? viewport.clientWidth : 0;
-    }
-    function update() {
-        const offset = -index * slideWidth();
-        if (track) track.style.transform = 'translateX(' + offset + 'px)';
-    }
-    function goNext() {
-        if (!items.length) return;
-        index = (index + 1) % items.length;
+    document.addEventListener('DOMContentLoaded', function () {
+        /* Branch select */
+        
+        /* News slider */
+        const viewport = document.querySelector('.news-viewport');
+        const track = document.querySelector('.news-track');
+        const items = document.querySelectorAll('.news-item');
+        const prev = document.querySelector('.news-prev');
+        const next = document.querySelector('.news-next');
+        let index = 0;
+        
+        function slideWidth() {
+            return viewport ? viewport.clientWidth : 0;
+        }
+        function update() {
+            const offset = -index * slideWidth() - (index * 24);
+            if (track) track.style.transform = 'translateX(' + offset + 'px)';
+        }
+        function goNext() {
+            if (!items.length) return;
+            index = (index + 1) % items.length;
+            update();
+        }
+        function goPrev() {
+            if (!items.length) return;
+            index = (index - 1 + items.length) % items.length;
+            update();
+        }
+        if (next) next.addEventListener('click', goNext);
+        if (prev) prev.addEventListener('click', goPrev);
+        window.addEventListener('resize', update);
         update();
-    }
-    function goPrev() {
-        if (!items.length) return;
-        index = (index - 1 + items.length) % items.length;
-        update();
-    }
-    if (next) next.addEventListener('click', goNext);
-    if (prev) prev.addEventListener('click', goPrev);
-    window.addEventListener('resize', update);
-    update();
-    
-    
-    const phoneBtn = document.querySelector('.anceta__phoneBtn');
-    const modal = document.getElementById('phoneModal');
-    const closeBtn = modal.querySelector('.modal-close');
-    
-    if (!phoneBtn || !modal) return;
-    
-    // Открыть окно
-    phoneBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        modal.style.display = 'flex';
-    });
-    
-    // Закрыть по крестику
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // Закрыть по клику вне окна
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
+        
+        
+        const phoneBtn = document.querySelector('.anceta__phoneBtn');
+        const modal = document.getElementById('phoneModal');
+        const closeBtn = modal.querySelector('.modal-close');
+        
+        if (!phoneBtn || !modal) return;
+        
+        // Открыть окно
+        phoneBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+        });
+        
+        // Закрыть по крестику
+        closeBtn.addEventListener('click', function() {
             modal.style.display = 'none';
-        }
-    });
-    
-    // Закрыть по Esc
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
-            modal.style.display = 'none';
-        }
-    });
-
-    /* Custom select for branch */
-    const selectWrapper = document.getElementById('branch-select');
-    if (selectWrapper) {
-        const control = selectWrapper.querySelector('.select-arrow__control');
-        const valueEl = selectWrapper.querySelector('.select-arrow__value');
-        const menu = selectWrapper.querySelector('.select-arrow__menu');
-        const options = selectWrapper.querySelectorAll('.select-arrow__option');
-        const hiddenInput = document.getElementById('branch-input');
-
-        function closeMenu() {
-            menu.style.display = 'none';
-            selectWrapper.setAttribute('data-open', 'false');
-        }
-
-        function openMenu() {
-            menu.style.display = 'block';
-            selectWrapper.setAttribute('data-open', 'true');
-        }
-
-        control.addEventListener('click', function (e) {
-            e.stopPropagation();
-            const isOpen = selectWrapper.getAttribute('data-open') === 'true';
-            if (isOpen) {
-                closeMenu();
-            } else {
-                openMenu();
+        });
+        
+        // Закрыть по клику вне окна
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
             }
         });
-
-        options.forEach(opt => {
-            opt.addEventListener('click', function (e) {
+        
+        // Закрыть по Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            }
+        });
+    
+        /* Custom select for branch */
+        const selectWrapper = document.getElementById('branch-select');
+        if (selectWrapper) {
+            const control = selectWrapper.querySelector('.select-arrow__control');
+            const valueEl = selectWrapper.querySelector('.select-arrow__value');
+            const menu = selectWrapper.querySelector('.select-arrow__menu');
+            const options = selectWrapper.querySelectorAll('.select-arrow__option');
+            const hiddenInput = document.getElementById('branch-input');
+    
+            function closeMenu() {
+                menu.style.display = 'none';
+                selectWrapper.setAttribute('data-open', 'false');
+            }
+    
+            function openMenu() {
+                menu.style.display = 'block';
+                selectWrapper.setAttribute('data-open', 'true');
+            }
+    
+            control.addEventListener('click', function (e) {
                 e.stopPropagation();
-                const val = this.getAttribute('data-value');
-                const text = this.textContent;
-
-                valueEl.textContent = text;
-                hiddenInput.value = val;
-
+                const isOpen = selectWrapper.getAttribute('data-open') === 'true';
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+    
+            options.forEach(opt => {
+                opt.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const val = this.getAttribute('data-value');
+                    const text = this.textContent;
+    
+                    valueEl.textContent = text;
+                    hiddenInput.value = val;
+    
+                    closeMenu();
+                });
+            });
+    
+            document.addEventListener('click', function () {
                 closeMenu();
             });
-        });
-
-        document.addEventListener('click', function () {
-            closeMenu();
-        });
-    }
-});
-
-/* Scroll to anceta function */
-function scrollToAnceta() {
-    const ancetaSection = document.getElementById('anceta');
-    if (ancetaSection) {
-        const elementPosition = ancetaSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset; // 100px отступ сверху
+        }
         
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
+    });
+    
+    /* Scroll to anceta function */
+    function scrollToAnceta() {
+        const ancetaSection = document.getElementById('anceta');
+        if (ancetaSection) {
+            const elementPosition = ancetaSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset; // 100px отступ сверху
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     }
-}
 </script>
 {% endblock %}
