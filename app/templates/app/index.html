@@ -232,39 +232,42 @@
             {% endif %}
 
             <!-- ФИО родителя -->
-            <div class="anceta__field">
-                {{ form.parent_full_name }}
-                {% if form.parent_full_name.errors %}
+            <div class="anceta__field{% if form.parent_full_name.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
                     <p class="form-error">{{ form.parent_full_name.errors|striptags }}</p>
                 {% endif %}
+                {{ form.parent_full_name }}
             </div>
 
             <!-- Телефон -->
-            <div class="anceta__field">
-                {{ form.parent_phone }}
-                {% if form.parent_phone.errors %}
+            <div class="anceta__field{% if form.parent_phone.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
                     <p class="form-error">{{ form.parent_phone.errors|striptags }}</p>
                 {% endif %}
+                {{ form.parent_phone }}
             </div>
 
             <!-- ФИО ребенка -->
-            <div class="anceta__field">
-                {{ form.child_full_name }}
-                {% if form.child_full_name.errors %}
+            <div class="anceta__field{% if form.child_full_name.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
                     <p class="form-error">{{ form.child_full_name.errors|striptags }}</p>
                 {% endif %}
+                {{ form.child_full_name }}
             </div>
 
             <!-- Дата рождения -->
-            <div class="anceta__field">
-                {{ form.child_birth_date }}
-                {% if form.child_birth_date.errors %}
+            <div class="anceta__field{% if form.child_birth_date.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
                     <p class="form-error">{{ form.child_birth_date.errors|striptags }}</p>
                 {% endif %}
+                {{ form.child_birth_date }}
             </div>
 
             <!-- Отделение -->
             <div class="anceta__field">
+                {% if form.branch.errors %}
+                    <p class="form-error">{{ form.branch.errors|striptags }}</p>
+                {% endif %}
                 <div class="select-wrapper" id="branch-select">
                     <div class="select-arrow__control">
                         <span class="select-arrow__value">Выбрать отделение*</span>
@@ -278,9 +281,6 @@
                     <!-- Скрытый input для отправки в форму -->
                     <input type="hidden" name="branch" id="branch-input">
                 </div>
-                {% if form.branch.errors %}
-                    <p class="form-error">{{ form.branch.errors|striptags }}</p>
-                {% endif %}
             </div>
 
             <!-- Кнопки -->

@@ -1754,3 +1754,20 @@ h1, h2 {
     max-width: 100%;
   }
 }
+
+.form-error {
+  color: crimson;
+  border: crimson;
+  border-width: 5px;
+}
+/* Подсветка обычных input */
+.anceta__field.has-error input {
+  border: 2px solid #e74c3c !important;
+  background-color: #fdf2f2 !important;
+}
+
+/* Подсветка select (если оставите стандартный) */
+.anceta__field.has-error select {
+  border: 2px solid #e74c3c !important;
+  background-color: #fdf2f2 !important;
+}
