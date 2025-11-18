@@ -164,76 +164,86 @@
 <section class="anceta wrap" id="anceta">
     <div class="carta"></div>
     <div class="input-block">
-        <label for="FIO">
+        <form method="post" class="anceta__form" novalidate>
+            {% csrf_token %}
             <h3>Присоединяйся к нам!</h3>
-        </label>
-        <input id="FIO" type="text" placeholder="ФИО родителя*">
-        <input type="text"  placeholder="Контактный телефон*">
-        <input type="text" placeholder="ФИО ребенка*">
-        <input type="text" placeholder="Дата рождения*">
-            <div class="branch-select" data-open="false">
-                <div class="branch-select__control">
-                    <span class="branch-select__value">Выбрать отделение</span>
-                    <span class="branch-select__arrow"></span>
+
+            {% if form.non_field_errors %}
+                <div class="form-error form-error--non-field">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
                 </div>
-                <ul class="branch-select__menu">
-                    <li class="branch-select__option" data-value="Коломенская">Коломенская</li>
-                    <li class="branch-select__option" data-value="Царицино">Царицино</li>
-                </ul>
+            {% endif %}
+
+            <!-- ФИО родителя -->
+            <div class="anceta__field">
+                {{ form.parent_full_name }}
+                {% if form.parent_full_name.errors %}
+                    <p class="form-error">{{ form.parent_full_name.errors|striptags }}</p>
+                {% endif %}
             </div>
 
-        <button class="btn-sign-up btn-sign-up--btn3">записаться</button>
-        <button class="anceta__phoneBtn">
-            <img src="{% static 'icon/phone.svg' %}" alt="">
-        </button>
+            <!-- Телефон -->
+            <div class="anceta__field">
+                {{ form.parent_phone }}
+                {% if form.parent_phone.errors %}
+                    <p class="form-error">{{ form.parent_phone.errors|striptags }}</p>
+                {% endif %}
+            </div>
+
+            <!-- ФИО ребенка -->
+            <div class="anceta__field">
+                {{ form.child_full_name }}
+                {% if form.child_full_name.errors %}
+                    <p class="form-error">{{ form.child_full_name.errors|striptags }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Дата рождения -->
+            <div class="anceta__field">
+                {{ form.child_birth_date }}
+                {% if form.child_birth_date.errors %}
+                    <p class="form-error">{{ form.child_birth_date.errors|striptags }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Отделение -->
+            <div class="anceta__field">
+                <div class="select-wrapper" id="branch-select">
+                    <div class="select-arrow__control">
+                        <span class="select-arrow__value">Выбрать отделение*</span>
+                        <span class="select-arrow__icon">▶</span>
+                    </div>
+                    <ul class="select-arrow__menu">
+                        <li class="select-arrow__option" data-value="">Выбрать отделение</li>
+                        <li class="select-arrow__option" data-value="centr">Царицыно</li>
+                        <li class="select-arrow__option" data-value="sever">Коломенская</li>
+                    </ul>
+                    <!-- Скрытый input для отправки в форму -->
+                    <input type="hidden" name="branch" id="branch-input">
+                </div>
+                {% if form.branch.errors %}
+                    <p class="form-error">{{ form.branch.errors|striptags }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Кнопки -->
+            <div class="anceta__button-group">
+                <button type="submit" class="btn-sign-up btn-sign-up--btn3">записаться</button>
+                <button class="anceta__phoneBtn" type="button">
+                    <img src="{% static 'icon/phone.svg' %}" alt="">
+                </button>
+            </div>
+        </form>
     </div>
-
-
 </section>
 {% endblock %}
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     /* Branch select */
-    const select = document.querySelector('.branch-select');
-    if (!select) return;
-    const control = select.querySelector('.branch-select__control');
-    const valueEl = select.querySelector('.branch-select__value');
-    const menu = select.querySelector('.branch-select__menu');
-    const options = select.querySelectorAll('.branch-select__option');
-
-    function closeMenu() {
-        select.setAttribute('data-open', 'false');
-        menu.style.display = 'none';
-    }
-    function openMenu() {
-        select.setAttribute('data-open', 'true');
-        menu.style.display = 'block';
-    }
-
-    control.addEventListener('click', function (e) {
-        e.stopPropagation();
-        const isOpen = select.getAttribute('data-open') === 'true';
-        if (isOpen) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
-    });
-
-    options.forEach(function (opt) {
-        opt.addEventListener('click', function (e) {
-            e.stopPropagation();
-            const val = opt.getAttribute('data-value');
-            valueEl.textContent = val;
-            closeMenu();
-        });
-    });
-
-    document.addEventListener('click', function () {
-        closeMenu();
-    });
-
+    
     /* News slider */
     const viewport = document.querySelector('.news-viewport');
     const track = document.querySelector('.news-track');
@@ -241,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const prev = document.querySelector('.news-prev');
     const next = document.querySelector('.news-next');
     let index = 0;
-
+    
     function slideWidth() {
         return viewport ? viewport.clientWidth : 0;
     }
@@ -263,39 +273,85 @@ document.addEventListener('DOMContentLoaded', function () {
     if (prev) prev.addEventListener('click', goPrev);
     window.addEventListener('resize', update);
     update();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+    
+    
     const phoneBtn = document.querySelector('.anceta__phoneBtn');
     const modal = document.getElementById('phoneModal');
     const closeBtn = modal.querySelector('.modal-close');
-
+    
     if (!phoneBtn || !modal) return;
-
+    
     // Открыть окно
     phoneBtn.addEventListener('click', function(e) {
         e.preventDefault();
         modal.style.display = 'flex';
     });
-
+    
     // Закрыть по крестику
     closeBtn.addEventListener('click', function() {
         modal.style.display = 'none';
     });
-
+    
     // Закрыть по клику вне окна
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.style.display = 'none';
         }
     });
-
+    
     // Закрыть по Esc
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'flex') {
             modal.style.display = 'none';
         }
     });
+
+    /* Custom select for branch */
+    const selectWrapper = document.getElementById('branch-select');
+    if (selectWrapper) {
+        const control = selectWrapper.querySelector('.select-arrow__control');
+        const valueEl = selectWrapper.querySelector('.select-arrow__value');
+        const menu = selectWrapper.querySelector('.select-arrow__menu');
+        const options = selectWrapper.querySelectorAll('.select-arrow__option');
+        const hiddenInput = document.getElementById('branch-input');
+
+        function closeMenu() {
+            menu.style.display = 'none';
+            selectWrapper.setAttribute('data-open', 'false');
+        }
+
+        function openMenu() {
+            menu.style.display = 'block';
+            selectWrapper.setAttribute('data-open', 'true');
+        }
+
+        control.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const isOpen = selectWrapper.getAttribute('data-open') === 'true';
+            if (isOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        options.forEach(opt => {
+            opt.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const val = this.getAttribute('data-value');
+                const text = this.textContent;
+
+                valueEl.textContent = text;
+                hiddenInput.value = val;
+
+                closeMenu();
+            });
+        });
+
+        document.addEventListener('click', function () {
+            closeMenu();
+        });
+    }
 });
 
 /* Scroll to anceta function */

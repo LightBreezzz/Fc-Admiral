@@ -1,14 +1,16 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Coach, Player, Parent
+from .models import Coach, Player, JoinRequest
+
 
 
 @admin.register(Coach)
 class CoachAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'position', 'qualification', 'work_start_year', 'photo_preview')
+    list_display = ('full_name', 'position', 'qualification', 'work_start_year', 'photo_preview', 'order',)
     list_filter = ('position', 'qualification')
     search_fields = ('full_name', 'position', 'qualification')
-    ordering = ('full_name',)
+    list_editable = ('order',)  # можно менять прямо в списке
+    ordering = ('order',)
     
     fieldsets = (
         ('Основная информация', {
@@ -71,23 +73,9 @@ class PlayerAdmin(admin.ModelAdmin):
     
     photo_preview.short_description = 'Превью фотографии'
 
-
-@admin.register(Parent)
-class ParentAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'phone', 'player', 'player_birth_date')
-    list_filter = ('player', 'created_at')
-    search_fields = ('full_name', 'phone', 'player__full_name')
-    ordering = ('full_name',)
-    raw_id_fields = ('player',)
-    
-    fieldsets = (
-        ('Информация о родителе', {
-            'fields': ('full_name', 'phone')
-        }),
-        ('Связанный игрок', {
-            'fields': ('player',),
-            'description': 'Выберите игрока, для которого регистрируется родитель'
-        }),
-    )
-    
-    readonly_fields = ('created_at', 'updated_at')
+@admin.register(JoinRequest)
+class JoinRequestAdmin(admin.ModelAdmin):
+    list_display = ('parent_full_name', 'child_full_name', 'branch', 'created_at')
+    search_fields = ('parent_full_name', 'child_full_name', 'parent_phone')
+    list_filter = ('branch', 'created_at')
+    ordering = ['-created_at']

@@ -1,11 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Coach, Player
-
-# Create your views here.
+from .forms import JoinRequestForm
 
 
 def index(request):
-    return render(request, 'app/index.html')
+    if request.method == 'POST':
+        form = JoinRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "✅ Заявка успешно отправлена!")
+            return redirect('index')  # Перенаправляем на главную
+    else:
+        form = JoinRequestForm()
+
+    return render(request, 'app/index.html', {'form': form})
 
 
 def coach_cards(request):

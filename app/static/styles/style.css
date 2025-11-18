@@ -546,6 +546,8 @@ height: 100%;
   justify-content: space-between;
   margin-bottom: 78px;
 }
+
+
 .anceta::before {
   content: "";
   position: absolute;
@@ -575,19 +577,29 @@ height: 100%;
   text-align: center;
   margin-bottom: 47px;
 }
-.anceta .input-block input {
-  width: 527px;
+.anceta .input-block .anceta__field input,
+.anceta .input-block .anceta__field select {
+  width: 100%;
   height: 90px;
   border-radius: 100px;
   background-color: #F1F1F1;
   border: none;
-  margin-bottom: 21px;
   font-weight: 300;
   font-size: 24px;
   color: #000000;
   padding-left: 67px;
+  box-sizing: border-box;
+  margin-bottom: 21px;
 }
-.anceta .input-block ::placeholder {
+
+
+.anceta .input-block input::placeholder {
+  font-weight: 300;
+  font-size: 24px;
+  color: #626262;
+}
+
+.anceta .input-block input.anceta__input::placeholder {
   font-weight: 300;
   font-size: 24px;
   color: #626262;
@@ -615,7 +627,17 @@ height: 100%;
 .anceta .input-block .anceta__phoneBtn:hover {
   outline: 3px solid #FFFFFF;
 }
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 21px;
+}
 
+.select-wrapper select {
+  width: 100%;
+  height: 90px;
+  /* ... остальные стили как выше ... */
+}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -742,6 +764,65 @@ height: 100%;
 }
 .branch-select__option:hover {
   background-color: #F3F3F3;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 21px;
+}
+
+.select-arrow__control {
+  width: 100%;
+  height: 90px;
+  background-color: #F1F1F1;
+  border-radius: 100px;
+  padding: 0 67px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-size: 24px;
+  color: #626262;
+}
+
+.select-arrow__icon {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #626262;
+  transition: transform 0.2s;
+}
+
+.select-wrapper[data-open="true"] .select-arrow__icon {
+  transform: rotate(90deg);
+}
+
+.select-arrow__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 8px 0;
+  margin-top: 8px;
+  display: none;
+  z-index: 10;
+}
+
+.select-arrow__option {
+  padding: 14px 30px;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+.select-arrow__option:hover {
+  background-color: #f0f0f0;
 }
 
 .footer {
