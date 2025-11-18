@@ -392,6 +392,28 @@ height: 100%;
   max-width: 100%;
   text-align: right;
 }
+.news-item .news-content:has(.fathers-club-block) {
+  margin-left: 0;
+  width: 100%;
+}
+.news-item .news-content:has(.admirals-championship-block),
+.news-content .admirals-championship-block {
+  margin-left: 0;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+.news-content .admirals-championship-block {
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+.news-item .news-content:has(.womens-club-block),
+.news-content .womens-club-block {
+  margin-left: 0;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
 .news-arrow {
   position: absolute;
   top: 50%;
@@ -1085,3 +1107,650 @@ h1, h2 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Стили для новостей БЛОК 1 */
+/* Fathers Club Block Styles */
+.fathers-club-block {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 774px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.fathers-club-placeholder {
+  flex: 0 0 45%;
+  max-width: 45%;
+  height: 696px;
+  max-height: 100%;
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.fathers-club-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+  color: #ffffff;
+  min-width: 0;
+  padding-left: 20px;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.fathers-club-title {
+  margin-bottom: 30px;
+}
+
+.fathers-club-title-line1,
+.fathers-club-title-line2 {
+  font-family: "Akt-Black", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.1;
+  color: #ffffff;
+  text-align: right;
+  letter-spacing: 0;
+}
+
+.fathers-club-title-line2 {
+  margin-top: 5px;
+}
+
+.fathers-club-paragraph {
+  font-family: "Manrope-Regular", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: right;
+  max-width: 100%;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.fathers-club-bold {
+  font-family: "Manrope-SemiBold", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1600px) {
+  .fathers-club-title-line1,
+  .fathers-club-title-line2 {
+    font-size: 48px;
+  }
+  .fathers-club-paragraph {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .fathers-club-title-line1,
+  .fathers-club-title-line2 {
+    font-size: 42px;
+  }
+  .fathers-club-paragraph {
+    font-size: 22px;
+  }
+  .fathers-club-placeholder {
+    height: 600px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .fathers-club-title-line1,
+  .fathers-club-title-line2 {
+    font-size: 36px;
+  }
+  .fathers-club-paragraph {
+    font-size: 20px;
+  }
+  .fathers-club-placeholder {
+    height: 550px;
+  }
+  .fathers-club-block {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .fathers-club-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .fathers-club-placeholder {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+  }
+  .fathers-club-text {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+  .fathers-club-title-line1,
+  .fathers-club-title-line2 {
+    text-align: center;
+    font-size: 32px;
+  }
+  .fathers-club-paragraph {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+/* Стили для новостей БЛОК 2 */
+/* Admirals Championship Block Styles */
+.news-item .news-content:has(.admirals-championship-block),
+.news-content .admirals-championship-block {
+  margin-left: 0;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+.admirals-championship-block {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 774px;
+  box-sizing: border-box;
+  overflow: visible;
+  z-index: 10;
+  display: block;
+}
+
+.news-content .admirals-championship-block {
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+.admirals-top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+  max-width: 50%;
+  z-index: 10;
+  padding-left: 20px;
+  display: block;
+  visibility: visible;
+}
+
+.admirals-title-top {
+  font-family: "Akt-Black", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.1;
+  color: #ffffff;
+  text-align: right;
+  letter-spacing: 0;
+  margin-bottom: 5px;
+}
+
+.admirals-title-bottom {
+  font-family: "Akt-Black", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.1;
+  text-align: right;
+  letter-spacing: 0;
+  margin-bottom: 20px;
+}
+
+.admirals-title-white {
+  color: #ffffff;
+}
+
+.admirals-title-green {
+  color: #00ff00;
+}
+
+.admirals-paragraph-right {
+  font-family: "Manrope-SemiBold", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: right;
+  max-width: 100%;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.admirals-left {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  text-align: left;
+  max-width: 55%;
+  z-index: 10;
+  padding-right: 20px;
+  display: block;
+  visibility: visible;
+}
+
+.admirals-title-left {
+  font-family: "Akt-Black", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.1;
+  color: #ffffff;
+  text-align: left;
+  letter-spacing: 0;
+  margin-bottom: 5px;
+}
+
+.admirals-title-green-left {
+  font-family: "Akt-Black", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.1;
+  color: #00ff00;
+  text-align: left;
+  letter-spacing: 0;
+  margin-bottom: 20px;
+}
+
+.admirals-paragraph-left {
+  font-family: "Manrope-SemiBold", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: left;
+  max-width: 100%;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.admirals-bold {
+  font-family: "Manrope-ExtraBold", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+}
+
+/* Responsive adjustments for Admirals Championship Block */
+@media (max-width: 1600px) {
+  .admirals-title-top,
+  .admirals-title-bottom,
+  .admirals-title-left,
+  .admirals-title-green-left {
+    font-size: 48px;
+  }
+  .admirals-paragraph-right,
+  .admirals-paragraph-left {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .admirals-title-top,
+  .admirals-title-bottom,
+  .admirals-title-left,
+  .admirals-title-green-left {
+    font-size: 42px;
+  }
+  .admirals-paragraph-right,
+  .admirals-paragraph-left {
+    font-size: 22px;
+  }
+  .admirals-top-right {
+    max-width: 48%;
+  }
+  .admirals-left {
+    max-width: 52%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .admirals-title-top,
+  .admirals-title-bottom,
+  .admirals-title-left,
+  .admirals-title-green-left {
+    font-size: 36px;
+  }
+  .admirals-paragraph-right,
+  .admirals-paragraph-left {
+    font-size: 20px;
+  }
+  .admirals-top-right {
+    max-width: 45%;
+  }
+  .admirals-left {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 992px) {
+  .admirals-championship-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 20px;
+  }
+  .admirals-top-right,
+  .admirals-left {
+    position: relative;
+    max-width: 100%;
+    text-align: center;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    padding: 0;
+  }
+  .admirals-title-top,
+  .admirals-title-bottom,
+  .admirals-title-left,
+  .admirals-title-green-left {
+    text-align: center;
+    font-size: 32px;
+  }
+  .admirals-paragraph-right,
+  .admirals-paragraph-left {
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+/* Стили для новостей БЛОК 3 */
+/* Womens Club Block Styles */
+.news-item .news-content:has(.womens-club-block),
+.news-content .womens-club-block {
+  margin-left: 0;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+.womens-club-block {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 774px;
+  box-sizing: border-box;
+  overflow: visible;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding-top: 20px;
+}
+
+.womens-club-text {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: #ffffff;
+  z-index: 10;
+  padding-left: 20px;
+}
+
+.womens-club-title {
+  margin-bottom: 30px;
+}
+
+.womens-club-title-line1,
+.womens-club-title-line2 {
+  font-family: "Akt-Black", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.2;
+  color: #ffffff;
+  text-align: left;
+  letter-spacing: 0;
+}
+
+.womens-club-title-line2 {
+  margin-top: 5px;
+}
+
+.womens-club-paragraph {
+  font-family: "Manrope-Regular", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.375;
+  color: #ffffff;
+  text-align: left;
+  max-width: 100%;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.womens-club-placeholders {
+  flex: 0 0 45%;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 10;
+  padding-right: 20px;
+}
+
+.womens-club-placeholder {
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.womens-club-placeholder-top {
+  height: 338px;
+}
+
+.womens-club-placeholder-bottom {
+  height: 366px;
+}
+
+/* Responsive adjustments for Womens Club Block */
+@media (max-width: 1600px) {
+  .womens-club-title-line1,
+  .womens-club-title-line2 {
+    font-size: 48px;
+  }
+  .womens-club-paragraph {
+    font-size: 24px;
+  }
+  .womens-club-placeholder-top {
+    height: 300px;
+  }
+  .womens-club-placeholder-bottom {
+    height: 320px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .womens-club-title-line1,
+  .womens-club-title-line2 {
+    font-size: 42px;
+  }
+  .womens-club-paragraph {
+    font-size: 22px;
+  }
+  .womens-club-placeholder-top {
+    height: 280px;
+  }
+  .womens-club-placeholder-bottom {
+    height: 300px;
+  }
+  .womens-club-block {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .womens-club-title-line1,
+  .womens-club-title-line2 {
+    font-size: 36px;
+  }
+  .womens-club-paragraph {
+    font-size: 20px;
+  }
+  .womens-club-placeholder-top {
+    height: 250px;
+  }
+  .womens-club-placeholder-bottom {
+    height: 270px;
+  }
+  .womens-club-block {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .womens-club-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  .womens-club-text,
+  .womens-club-placeholders {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+  .womens-club-title-line1,
+  .womens-club-title-line2 {
+    text-align: center;
+    font-size: 32px;
+  }
+  .womens-club-paragraph {
+    text-align: center;
+    font-size: 18px;
+  }
+  .womens-club-placeholder-top,
+  .womens-club-placeholder-bottom {
+    height: 200px;
+  }
+}
+
+/* Стили для новостей БЛОК 4 */
+/* Main Team Block Styles */
+.news-item .news-content:has(.main-team-block),
+.news-content .main-team-block {
+  margin-left: 0;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+.main-team-block {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 774px;
+  box-sizing: border-box;
+  overflow: visible;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 20px 20px 20px;
+}
+
+.main-team-title {
+  font-family: "Akt-Black", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.2;
+  color: #ffffff;
+  text-align: left;
+  letter-spacing: 0;
+  margin-bottom: 10px;
+  z-index: 10;
+}
+
+.main-team-subtitle {
+  font-family: "Akt-Black", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1.2;
+  color: #ffffff;
+  text-align: left;
+  letter-spacing: 0;
+  margin-bottom: 30px;
+  z-index: 10;
+}
+
+.main-team-paragraph {
+  font-family: "Manrope-Regular", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.5;
+  color: #ffffff;
+  text-align: left;
+  max-width: 935px;
+  margin: 0;
+  word-wrap: break-word;
+  z-index: 10;
+}
+
+/* Responsive adjustments for Main Team Block */
+@media (max-width: 1600px) {
+  .main-team-title,
+  .main-team-subtitle {
+    font-size: 48px;
+  }
+  .main-team-paragraph {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .main-team-title,
+  .main-team-subtitle {
+    font-size: 42px;
+  }
+  .main-team-paragraph {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-team-title,
+  .main-team-subtitle {
+    font-size: 36px;
+  }
+  .main-team-paragraph {
+    font-size: 20px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-team-block {
+    padding: 20px;
+    align-items: center;
+  }
+  .main-team-title,
+  .main-team-subtitle {
+    text-align: center;
+    font-size: 32px;
+  }
+  .main-team-paragraph {
+    text-align: center;
+    font-size: 18px;
+    max-width: 100%;
+  }
+}
