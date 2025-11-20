@@ -135,7 +135,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-    
+    const phoneInput = document.querySelector('[name="parent_phone"]');
+    if (phoneInput && !phoneInput.inputmask) {
+        new Inputmask("+7 (999) 999-99-99", {
+            showMaskOnHover: false,
+            showMaskOnFocus: true
+        }).mask(phoneInput);
+    }
 });
 
 /* Scroll to anceta function */
@@ -151,5 +157,3 @@ function scrollToAnceta() {
         });
     }
 }
-
-  Inputmask("+7 (999) 999-99-99").mask(document.querySelector('[name="parent_phone"]'));

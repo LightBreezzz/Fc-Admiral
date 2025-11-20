@@ -14,9 +14,9 @@ def validate_phone(value):
 parent_phone = forms.CharField(
     validators=[validate_phone],
     widget=forms.TextInput(attrs={
-        'type': 'tel',
         'class': 'anceta__input',
-        'placeholder': '+7 (999) 999-99-99'
+        'placeholder': '+7 (999) 999-99-99',
+        'inputmode': 'tel'  # ← это даёт цифровую клавиатуру на мобилках
     })
 )
 
@@ -52,7 +52,7 @@ class JoinRequestForm(forms.ModelForm):
         fields = ['parent_full_name', 'parent_phone', 'child_full_name', 'child_birth_date', 'branch']
         widgets = {
             'parent_full_name': forms.TextInput(attrs={'placeholder': 'ФИО родителя*'}),
-            'parent_phone': forms.TextInput(attrs={'placeholder': 'Контактный телефон*', 'type': 'tel'}),
+            'parent_phone': forms.TextInput(attrs={'type': 'tel', 'class': 'anceta__input', 'placeholder': 'Контактный телефон*'}),
             'child_full_name': forms.TextInput(attrs={'placeholder': 'ФИО ребенка*'}),
             'child_birth_date': forms.TextInput(attrs={'placeholder': 'дд.мм.гггг*'}),
             'branch': forms.Select(attrs={'placeholder': 'anceta_input anceta_select'}),
