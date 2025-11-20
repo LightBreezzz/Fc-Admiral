@@ -9,7 +9,9 @@
                 <img src="{% static 'icon/Logo.svg' %}" alt="">
             </a>
             <p class="header__p">м. Царицыно, м. Кантемировская, м. Орехово,<br>м. Коломенская, м. Кленовый бульвар, м. Нагатинский затон</p>
+            <button class="anceta__phoneBtn" type="button">
             <a class="header__a" href="#">8 (926) 597 57 57</a>
+            </button>
         </div>
         <h2>Футбольная школа</h2>
         <h1>Адмирал-вмф</h1>
@@ -330,30 +332,34 @@
         update();
         
         
-        const phoneBtn = document.querySelector('.anceta__phoneBtn');
+        const phoneButtons = document.querySelectorAll('.anceta__phoneBtn');
         const modal = document.getElementById('phoneModal');
+
+        if (phoneButtons.length === 0 || !modal) return;
+
         const closeBtn = modal.querySelector('.modal-close');
-        
-        if (!phoneBtn || !modal) return;
-        
-        // Открыть окно
-        phoneBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            modal.style.display = 'flex';
+        if (!closeBtn) return;
+
+        // Открыть окно по клику на ЛЮБУЮ кнопку
+        phoneButtons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.style.display = 'flex';
+            });
         });
-        
+
         // Закрыть по крестику
         closeBtn.addEventListener('click', function() {
             modal.style.display = 'none';
         });
-        
+
         // Закрыть по клику вне окна
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
                 modal.style.display = 'none';
             }
         });
-        
+
         // Закрыть по Esc
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && modal.style.display === 'flex') {

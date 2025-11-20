@@ -162,6 +162,12 @@ body {
   align-items: center;
   text-align: center;
 }
+.intro .header .anceta__phoneBtn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none; /* ← Убираем границу */
+  outline: none; /* ← Убираем контур при фокусе (если нужно) */
+  box-shadow: none; /* ← Убираем тени, если есть */
+}
 
 .intro h1 {
   font-weight: 900;
@@ -180,7 +186,7 @@ body {
 
 }
 .intro button {
-  margin-top: 38px;
+  /* margin-top: 38px; */
 }
 .menu {
   display: flex;
@@ -869,6 +875,12 @@ height: 100%;
 .footer__text2 {
   margin-left: 43px;
 }
+.footer__text2 .anceta__phoneBtn{
+  background-color: rgba(0, 0, 0, 0);
+  border: none; /* ← Убираем границу */
+  outline: none; /* ← Убираем контур при фокусе (если нужно) */
+  box-shadow: none; /* ← Убираем тени, если есть */
+}
 .footer__text2 p {
   font-weight: 500;
   font-size: 24px;
@@ -876,6 +888,15 @@ height: 100%;
 .footer__number-p {
   font-weight: 500;
   font-size: 25px;
+}
+.footer__email-link {
+  text-decoration: none; /* убирает подчёркивание */
+  color: inherit;        /* наследует цвет родителя */
+  cursor: pointer;       /* курсор как у кнопки */
+}
+
+.footer__email-link:hover {
+  color: #0000FF; /* или любой акцентный цвет */
 }
 
 /* Coach Cards Styles */
