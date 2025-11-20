@@ -10,7 +10,7 @@ def index(request):
         if form.is_valid():
             form.save()
             messages.success(request, "✅ Заявка успешно отправлена!")
-            form = JoinRequestForm()
+            return redirect('index') 
     else:
         form = JoinRequestForm()
     return render(request, 'app/index.html', {'form': form})

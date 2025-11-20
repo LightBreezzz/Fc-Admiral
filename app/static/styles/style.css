@@ -152,7 +152,7 @@ body {
   margin-right: 30px;
 }
 .intro .header p, .intro .header a {
-  font-weight: 500;
+  font-weight: 300;
   font-size: 24px;
   color: #FFFFFF;
   align-items: center;
@@ -240,7 +240,7 @@ body {
   margin-bottom: 108px;
   display: flex;
   /* justify-content: space-between; */
-  width: 95%; height: 95%;
+  width: 90%; height: 95%;
 }
 
 .text-block-philosophy h2 {
@@ -264,6 +264,7 @@ body {
 .photo {
 width: 100%;
 height: 100%;
+margin-right: 5%;
 }
 
 .sets {
@@ -309,7 +310,7 @@ height: 100%;
   top: 400px;
 }
 .sets .text-block-sets {
-  width: 100%; /* ← растягиваем на всю ширину */
+  width: 95%; /* ← растягиваем на всю ширину */
   padding: 0; /* ← убираем отступы */
   margin: 0; /* ← убираем внешние отступы */
   position: relative;
@@ -337,18 +338,19 @@ height: 100%;
 }
 
 .plus {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 30px; /* вертикальный и горизонтальный отступы */
   margin-bottom: 108px;
+  justify-items: center; /* центрирует каждый .plus__item по горизонтали */
 }
+
 .plus__item {
-  width: 300px;
   text-align: center;
-  margin-top: 40px;
+  max-width: 100%;
 }
 .plus__item p {
-  font-weight: 300;
+  font-weight: 280;
   font-size: 32px;
   margin-top: 30px;
 }
@@ -361,17 +363,37 @@ height: 100%;
 .news-slider {
   position: relative;
   margin-top: 40px;
-}
-.sets .news-slider { width: 100%; margin: 0; }
-.news-viewport {
   overflow: hidden;
 }
-.news-track {
+/* Кнопки навигации Swiper */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ffffff; /* цвет стрелок */
+  background: rgba(0, 0, 0, 0.3);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
-  gap: 24px;
-  transition: transform 0.35s ease;
-  will-change: transform;
+  align-items: center;
+  justify-content: center;
+  margin-top: -25px; /* центрирует по вертикали */
+  transition: all 0.3s ease;
+  opacity: 0.8;
 }
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+/* Увеличим размер стрелок */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .news-item {
   min-width: 100%;
   box-sizing: border-box;
@@ -399,12 +421,12 @@ height: 100%;
   text-align: right;
 }
 .news-item .news-content:has(.fathers-club-block) {
-  margin-left: 0;
+  margin-left: 2%;
   width: 100%;
 }
 .news-item .news-content:has(.admirals-championship-block),
 .news-content .admirals-championship-block {
-  margin-left: 0;
+  margin-left: 2%;
   width: 100%;
   z-index: 10;
   position: relative;
@@ -852,17 +874,20 @@ height: 100%;
 .select-arrow__option:hover {
   background-color: #f0f0f0;
 }
-
+.footer-wrapper {
+  max-width: 1727px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 30px;
-  margin-right: 30px;
 }
-.footertext1 p {
-  font-weight: 500;
-  font-size: 24px;
+.footer__text1 p {
+  font-weight: 300;
+  /* font-size: 24px; */
 }
 .footer__contacts {
   display: flex;
@@ -1302,7 +1327,7 @@ h1, h2 {
 .admirals-top-right {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 40px;
   text-align: right;
   max-width: 50%;
   z-index: 10;
@@ -1355,11 +1380,11 @@ h1, h2 {
 .admirals-left {
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 40px;
   text-align: left;
-  max-width: 55%;
+  max-width: 50%;
   z-index: 10;
-  padding-right: 20px;
+  padding-right: 50px;
   display: block;
   visibility: visible;
 }
@@ -1516,13 +1541,13 @@ h1, h2 {
 
 .womens-club-text {
   flex: 0 0 50%;
-  max-width: 50%;
+  max-width: 45%;
   display: flex;
   flex-direction: column;
   text-align: left;
   color: #ffffff;
   z-index: 10;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .womens-club-title {
@@ -1558,7 +1583,7 @@ h1, h2 {
 
 .womens-club-placeholders {
   flex: 0 0 45%;
-  max-width: 45%;
+  max-width: 55%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -1688,6 +1713,7 @@ h1, h2 {
   flex-direction: column;
   justify-content: flex-start;
   padding: 20px 20px 20px 20px;
+  left: 40px;
 }
 
 .main-team-title {

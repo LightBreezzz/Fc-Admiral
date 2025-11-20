@@ -40,103 +40,104 @@
 
 <!-- Третий экран -->
     <section class="sets wrap">
-        <div class="news-slider">
-            <button class="news-arrow news-prev" type="button" aria-label="previous">
-                <img src="{% static 'icon/arrow-left.svg' %}" alt="">
-            </button>
-            <div class="news-viewport">
-                <div class="news-track">
-                    <div class="news-item" style="background-image:url('{% static 'img/set-img3.png' %}')">
-                        <div class="text-block-sets news-content">
-                            <h2 class="text-block-sets__h2">НАБОР ВОСПИТАННИКОВ С 3х ЛЕТ</h2>
-                            <p>Отличительной особенностью нашей школы является круглогодичный набор юных футболистов. Вы всегда можете записаться на пробную тренировку, после которой ребенок откроет для себя новый и увлекательный мир футбола!</p>
-                            <h2 class="text-block-sets__h2">МЫ ПРИГЛАШАЕМ ФУТБОЛИСТОВ</h2>
-                            <p>
-                                в одно из наших отделений: <br>
-                                "Адмирал Арена" (ул. Затонная, д.22) <br>
-                                Школа №0463 (ул. Новинки, д.8) <br>
-                                Откройте для себя удивительный мир футбола вместе с нами!
-                            </p>
-                        </div>
+        <div class="news-slider swiper">
+        <div class="swiper-wrapper">
+            <!-- Слайд 1 -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/set-img3.png' %}')">
+            <div class="text-block-sets news-content">
+                <h2 class="text-block-sets__h2">НАБОР ВОСПИТАННИКОВ С 3х ЛЕТ</h2>
+                <p>Отличительной особенностью нашей школы является круглогодичный набор юных футболистов. Вы всегда можете записаться на пробную тренировку, после которой ребенок откроет для себя новый и увлекательный мир футбола!</p>
+                <h2 class="text-block-sets__h2">МЫ ПРИГЛАШАЕМ ФУТБОЛИСТОВ</h2>
+                <p>
+                в одно из наших отделений: <br>
+                "Адмирал Арена" (ул. Затонная, д.22) <br>
+                Школа №0463 (ул. Новинки, д.8) <br>
+                Откройте для себя удивительный мир футбола вместе с нами!
+                </p>
+            </div>
+            </div>
+    
+            <!-- Слайд 2: Fathers Club -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="news-content">
+                <div class="fathers-club-block">
+                <div class="fathers-club-placeholder"></div>
+                <div class="fathers-club-text">
+                    <div class="fathers-club-title">
+                    <div class="fathers-club-title-line1">ОТЦОВСКИЙ</div>
+                    <div class="fathers-club-title-line2">ФУТБОЛЬНЫЙ КЛУБ</div>
                     </div>
-                    <div class="news-item" style="background-image:url('{% static 'img/image.png' %}')">
-                        <div class="news-content">
-                            <div class="fathers-club-block">
-                                <div class="fathers-club-placeholder"></div>
-                                <div class="fathers-club-text">
-                                    <div class="fathers-club-title">
-                                        <div class="fathers-club-title-line1">ОТЦОВСКИЙ</div>
-                                        <div class="fathers-club-title-line2">ФУТБОЛЬНЫЙ КЛУБ</div>
-                                    </div>
-                                    <p class="fathers-club-paragraph">
-                                        <span>Каждый ребенок мечтает увидеть, как его отец играет в футбол и празднует победы.<br><br>Отцам наших воспитанников мы предлагаем присоединиться к отцовской команде.<br><br></span>
-                                        <span class="fathers-club-bold">Тренировки, регулярная игровая практика и дружеская атмосфера мужского коллектива</span>
-                                        <span> позволят не только отвлечься от повседневных забот, но и дадут лишний повод вашим детям гордиться своими отцами!</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news-item" style="background-image:url('{% static 'img/image.png' %}')">
-                        <div class="news-content">
-                            <div class="admirals-championship-block">
-                                <div class="admirals-top-right">
-                                    <div class="admirals-title-top">ФК "АДМИРАЛ-ВМФ" 11×11</div>
-                                    <div class="admirals-title-bottom">
-                                        <span class="admirals-title-white">ИГРАЕТ И</span>
-                                        <span class="admirals-title-green"> ВЫИГРЫВАЕТ</span>
-                                    </div>
-                                    <p class="admirals-paragraph-right">
-                                        В июне стартовал чемпионат МФЛ 11х11, в котором команда воспитанников ФК "Адмирал-ВМФ" впервые<br>-
-                                        принимает участие.
-                                    </p>
-                                </div>
-                                <div class="admirals-left">
-                                    <div class="admirals-title-left">ПОСЛЕ 7 ПРОВЕДЕННЫХ МАТЧЕЙ</div>
-                                    <div class="admirals-title-green-left">7 ПОБЕД, И БОЛЕЕ 30 МЯЧЕЙ</div>
-                                    <p class="admirals-paragraph-left">
-                                        <span>Следите за новостями турнира и жизнью команды в нашей группе ВК: ФК «Адмирал-ВМФ» <br><br>Будем рады видеть вас на трибунах <br></span>
-                                        <span class="admirals-bold">"Один район - одна команда!"</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news-item" style="background-image:url('{% static 'img/image.png' %}')">
-                        <div class="news-content">
-                            <div class="womens-club-block">
-                                <div class="womens-club-text">
-                                    <div class="womens-club-title">
-                                        <div class="womens-club-title-line1">ЖЕНСКИЙ</div>
-                                        <div class="womens-club-title-line2">ФУТБОЛЬНЫЙ КЛУБ</div>
-                                    </div>
-                                    <p class="womens-club-paragraph">
-                                        Создавая женскую футбольную команду для мам воспитанников "Адмирал ВМФ" мы руководствовались двумя идеями. Во-первых, футбол - это спорт, доступный каждому. Во-вторых, гораздо проще понять и поддержать своего ребенка, если понимаешь спорт, которым он занимается. Наши мамы дважды в неделю тренируются под руководством опытного тренера, и регулярно участвуют в турнирах. Будем рады видеть и вас в нашей женской команде!
-                                    </p>
-                                </div>
-                                <div class="womens-club-placeholders">
-                                    <div class="womens-club-placeholder womens-club-placeholder-top"></div>
-                                    <div class="womens-club-placeholder womens-club-placeholder-bottom"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news-item" style="background-image:url('{% static 'img/image.png' %}')">
-                        <div class="news-content">
-                            <div class="main-team-block">
-                                <div class="main-team-title">Основная команда ФШ «Адмирал‑ВМФ»:</div>
-                                <div class="main-team-subtitle">гордость школы и пример для подражания</div>
-                                <p class="main-team-paragraph">
-                                    Основная команда «Адмирал‑ВМФ» - это визитная карточка нашей школы и живое воплощение её ценностей. Одна из главных особенностей команды - её органичный рост изнутри. Мы гордимся тем, что состав регулярно пополняется талантливыми выпускниками футбольной школы!&nbsp;&nbsp;<br><br>Сегодняшние воспитанники, глядя на основную команду, видят своё будущее в футболе! А сегодняшние игроки основы - это завтрашние наставники и хранители традиций нашей школы!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="fathers-club-paragraph">
+                    <span>Каждый ребенок мечтает увидеть, как его отец играет в футбол и празднует победы.<br><br>Отцам наших воспитанников мы предлагаем присоединиться к отцовской команде.<br><br></span>
+                    <span class="fathers-club-bold">Тренировки, регулярная игровая практика и дружеская атмосфера мужского коллектива</span>
+                    <span> позволят не только отвлечься от повседневных забот, но и дадут лишний повод вашим детям гордиться своими отцами!</span>
+                    </p>
+                </div>
                 </div>
             </div>
-            <button class="news-arrow news-next" type="button" aria-label="next">
-                <img src="{% static 'icon/arrow-right.svg' %}" alt="">
-            </button>
+            </div>
+    
+            <!-- Слайд 3: Admirals Championship -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="news-content">
+                <div class="admirals-championship-block">
+                <div class="admirals-top-right">
+                    <div class="admirals-title-top">ФК "АДМИРАЛ-ВМФ" 11×11</div>
+                    <div class="admirals-title-bottom">
+                    <span class="admirals-title-white">ИГРАЕТ И</span>
+                    <span class="admirals-title-green"> ВЫИГРЫВАЕТ</span>
+                    </div>
+                    <p class="admirals-paragraph-right">
+                    В июне стартовал чемпионат МФЛ 11х11, в котором команда воспитанников ФК "Адмирал-ВМФ" впервые<br>-
+                    принимает участие.
+                    </p>
+                </div>
+                <div class="admirals-left">
+                    <div class="admirals-title-left">ПОСЛЕ 7 ПРОВЕДЕННЫХ МАТЧЕЙ</div>
+                    <div class="admirals-title-green-left">7 ПОБЕД, И БОЛЕЕ 30 МЯЧЕЙ</div>
+                    <p class="admirals-paragraph-left">
+                    <span>Следите за новостями турнира и жизнью команды в нашей группе ВК: ФК «Адмирал-ВМФ» <br><br>Будем рады видеть вас на трибунах <br></span>
+                    <span class="admirals-bold">"Один район - одна команда!"</span>
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
+    
+            <!-- Слайд 4: Women's Club -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="news-content">
+                <div class="womens-club-block">
+                <div class="womens-club-text">
+                    <div class="womens-club-title">
+                    <div class="womens-club-title-line1">ЖЕНСКИЙ</div>
+                    <div class="womens-club-title-line2">ФУТБОЛЬНЫЙ КЛУБ</div>
+                    </div>
+                    <p class="womens-club-paragraph">
+                    Создавая женскую футбольную команду для мам воспитанников "Адмирал ВМФ" мы руководствовались двумя идеями. Во-первых, футбол - это спорт, доступный каждому. Во-вторых, гораздо проще понять и поддержать своего ребенка, если понимаешь спорт, которым он занимается. Наши мамы дважды в неделю тренируются под руководством опытного тренера, и регулярно участвуют в турнирах. Будем рады видеть и вас в нашей женской команде!
+                    </p>
+                </div>
+                <div class="womens-club-placeholders">
+                    <div class="womens-club-placeholder womens-club-placeholder-top"></div>
+                    <div class="womens-club-placeholder womens-club-placeholder-bottom"></div>
+                </div>
+                </div>
+            </div>
+            </div>
+    
+            <!-- Слайд 5: Main Team -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="news-content">
+                <div class="main-team-block">
+                <div class="main-team-title">Основная команда ФШ «Адмирал‑ВМФ»:</div>
+                <div class="main-team-subtitle">гордость школы и пример для подражания</div>
+                <p class="main-team-paragraph">
+                    Основная команда «Адмирал‑ВМФ» - это визитная карточка нашей школы и живое воплощение её ценностей. Одна из главных особенностей команды - её органичный рост изнутри. Мы гордимся тем, что состав регулярно пополняется талантливыми выпускниками футбольной школы!&nbsp;&nbsp;<br><br>Сегодняшние воспитанники, глядя на основную команду, видят своё будущее в футболе! А сегодняшние игроки основы - это завтрашние наставники и хранители традиций нашей школы!
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
         </div>
     </section>
 <!-- Третий экран -->
@@ -221,7 +222,7 @@
 <section class="anceta wrap" id="anceta">
     <div class="carta"></div>
     <div class="input-block">
-        <form method="post" class="anceta__form" novalidate>
+        <form method="post" class="anceta__form">
             {% csrf_token %}
             <h3>Присоединяйся к нам!</h3>
 
@@ -295,139 +296,18 @@
         </form>
     </div>
 </section>
-{% endblock %}
-{% block extra_js %}
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        /* Branch select */
-        
-        /* News slider */
-        const viewport = document.querySelector('.news-viewport');
-        const track = document.querySelector('.news-track');
-        const items = document.querySelectorAll('.news-item');
-        const prev = document.querySelector('.news-prev');
-        const next = document.querySelector('.news-next');
-        let index = 0;
-        
-        function slideWidth() {
-            return viewport ? viewport.clientWidth : 0;
-        }
-        function update() {
-            const offset = -index * slideWidth() - (index * 24);
-            if (track) track.style.transform = 'translateX(' + offset + 'px)';
-        }
-        function goNext() {
-            if (!items.length) return;
-            index = (index + 1) % items.length;
-            update();
-        }
-        function goPrev() {
-            if (!items.length) return;
-            index = (index - 1 + items.length) % items.length;
-            update();
-        }
-        if (next) next.addEventListener('click', goNext);
-        if (prev) prev.addEventListener('click', goPrev);
-        window.addEventListener('resize', update);
-        update();
-        
-        
-        const phoneButtons = document.querySelectorAll('.anceta__phoneBtn');
-        const modal = document.getElementById('phoneModal');
-
-        if (phoneButtons.length === 0 || !modal) return;
-
-        const closeBtn = modal.querySelector('.modal-close');
-        if (!closeBtn) return;
-
-        // Открыть окно по клику на ЛЮБУЮ кнопку
-        phoneButtons.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                modal.style.display = 'flex';
-            });
+{% if messages %}
+  {% for message in messages %}
+    {% if '✅ Заявка успешно отправлена!' in message.message %}
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const successModal = document.getElementById('successModal');
+          if (successModal) {
+            successModal.style.display = 'flex';
+          }
         });
-
-        // Закрыть по крестику
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        // Закрыть по клику вне окна
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Закрыть по Esc
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.style.display === 'flex') {
-                modal.style.display = 'none';
-            }
-        });
-    
-        /* Custom select for branch */
-        const selectWrapper = document.getElementById('branch-select');
-        if (selectWrapper) {
-            const control = selectWrapper.querySelector('.select-arrow__control');
-            const valueEl = selectWrapper.querySelector('.select-arrow__value');
-            const menu = selectWrapper.querySelector('.select-arrow__menu');
-            const options = selectWrapper.querySelectorAll('.select-arrow__option');
-            const hiddenInput = document.getElementById('branch-input');
-    
-            function closeMenu() {
-                menu.style.display = 'none';
-                selectWrapper.setAttribute('data-open', 'false');
-            }
-    
-            function openMenu() {
-                menu.style.display = 'block';
-                selectWrapper.setAttribute('data-open', 'true');
-            }
-    
-            control.addEventListener('click', function (e) {
-                e.stopPropagation();
-                const isOpen = selectWrapper.getAttribute('data-open') === 'true';
-                if (isOpen) {
-                    closeMenu();
-                } else {
-                    openMenu();
-                }
-            });
-    
-            options.forEach(opt => {
-                opt.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    const val = this.getAttribute('data-value');
-                    const text = this.textContent;
-    
-                    valueEl.textContent = text;
-                    hiddenInput.value = val;
-    
-                    closeMenu();
-                });
-            });
-    
-            document.addEventListener('click', function () {
-                closeMenu();
-            });
-        }
-        
-    });
-    
-    /* Scroll to anceta function */
-    function scrollToAnceta() {
-        const ancetaSection = document.getElementById('anceta');
-        if (ancetaSection) {
-            const elementPosition = ancetaSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset; // 100px отступ сверху
-            
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }
-    }
-</script>
+      </script>
+    {% endif %}
+  {% endfor %}
+{% endif %}
 {% endblock %}

@@ -1,10 +1,51 @@
 # forms.py
 from django import forms
 from .models import JoinRequest
+import re
+from django.core.exceptions import ValidationError
+
+
+def validate_phone(value):
+    if not re.match(r'^\+7\s?\(\d{3}\)\s?\d{3}-\d{2}-\d{2}$', value):
+        raise ValidationError('Номер должен быть в формате: +7 (999) 999-99-99')
+
+
+# В классе формы:
+parent_phone = forms.CharField(
+    validators=[validate_phone],
+    widget=forms.TextInput(attrs={
+        'type': 'tel',
+        'class': 'anceta__input',
+        'placeholder': '+7 (999) 999-99-99'
+    })
+)
+
+
+def validate_name(value):
+    if not re.match(r'^[а-яА-ЯёЁ\s]+$', value):
+        raise ValidationError('Имя должно содержать только русские буквы и пробелы')
+
+
+# В форме:
+parent_full_name = forms.CharField(
+    validators=[validate_name],
+    widget=forms.TextInput(attrs={'class': 'anceta__input', 'placeholder': 'ФИО родителя'})
+)
 
 
 class JoinRequestForm(forms.ModelForm):
     """Форма заявки на пробную тренировку"""
+    child_birth_date = forms.DateField(
+        widget=forms.DateInput(
+            attrs={
+                'type': 'date',  # ← браузер покажет нативный календарь
+                'class': 'anceta__input',
+                'placeholder': 'ДД.ММ.ГГГГ'
+            }
+        ),
+        label='Дата рождения ребёнка',
+        input_formats=['%Y-%m-%d']  # формат, который отправляется
+    )
 
     class Meta:
         model = JoinRequest
