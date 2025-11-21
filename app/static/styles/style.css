@@ -1818,3 +1818,385 @@ h1, h2 {
   border: 2px solid #e74c3c !important;
   background-color: #fdf2f2 !important;
 }
+
+/* ============
+   МОБИЛЬНАЯ АДАПТАЦИЯ (все экраны ≤ 768px)
+   ============ */
+
+/* Общие настройки */
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  /* Главный экран */
+  .intro {
+    height: auto;
+    min-height: 100vh; /* ← чтобы занимал весь экран */
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  .intro::before {
+    display: block; /* ← восстанавливаем фон */
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  .intro .header {
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+  }
+  .intro .header p,
+  .intro .header a {
+    font-size: 16px;
+    text-align: center;
+  }
+  .intro h1 {
+    font-size: 36px;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .intro h2 {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .btn-sign-up {
+    font-size: 18px;
+    padding: 14px 40px;
+    margin: 24px auto 0;
+    margin-left: 0;
+  }
+  .philosophy {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Бургер-меню */
+  .menu {
+    padding: 16px;
+    height: auto;
+  }
+  .menu-burger-placeholder {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-burger-placeholder {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      display: block;
+    }
+    .menu__burger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 4px;
+    }
+    .menu__burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #000;
+    }
+  }
+  .menu__items {
+    position: fixed;
+    top: 88px;
+    left: -100%;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    padding: 24px;
+    transition: left 0.3s ease;
+    z-index: 9;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .menu__items.active {
+    left: 0;
+  }
+  .menu__items a {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+  }
+  .menu__social {
+    margin: 0;
+    justify-content: center;
+  }
+  .menu__social img {
+    margin: 0 8px;
+    width: 32px;
+    height: 32px;
+  }
+ /* Бургер-меню в правом верхнем углу */
+@media (max-width: 768px) {
+  .menu__burger {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+  }
+  .menu__items {
+    position: fixed;
+    top: 88px;
+    right: -100%;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    padding: 24px;
+    transition: right 0.3s ease;
+    z-index: 9;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .menu__items.active {
+    right: 0;
+  }
+  .menu__items a {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+  /* Философия (новое отделение) */
+  .philosophy {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 80px;
+  }
+/* Скрыть элементы только на мобильных (ширина ≤ 768px) */
+@media (max-width: 768px) {
+  .intro .header__p,
+  .intro .anceta__phoneBtn {
+    display: none;
+  }
+}
+
+  .text-block-philosophy {
+    width: 100%;
+  }
+  .text-block-philosophy h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  .text-block-philosophy p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .photo {
+    margin: 40px 0 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Лента новостей */
+  .news-item {
+    height: auto;
+    padding: 30px 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .news-content {
+    margin-left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  .fathers-club-block,
+  .admirals-championship-block,
+  .womens-club-block,
+  .main-team-block {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 0 !important;
+    gap: 20px;
+  }
+  .fathers-club-placeholder,
+  .womens-club-placeholders {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 250px !important;
+  }
+  .fathers-club-text,
+  .womens-club-text,
+  .admirals-top-right,
+  .admirals-left,
+  .main-team-title,
+  .main-team-subtitle,
+  .main-team-paragraph {
+    text-align: center !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .fathers-club-title-line1,
+  .fathers-club-title-line2,
+  .admirals-title-top,
+  .admirals-title-bottom,
+  .admirals-title-left,
+  .admirals-title-green-left,
+  .womens-club-title-line1,
+  .womens-club-title-line2,
+  .main-team-title,
+  .main-team-subtitle {
+    font-size: 24px !important;
+  }
+  .fathers-club-paragraph,
+  .admirals-paragraph-right,
+  .admirals-paragraph-left,
+  .womens-club-paragraph,
+  .main-team-paragraph {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  /* Плюсы (иконки) */
+  .plus {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+  .plus__item img {
+    width: 60px;
+    height: 60px;
+  }
+  .plus__item p {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  /* Информация и "У нас" */
+  .info-one {
+    margin-bottom: 80px;
+    text-align: center;
+  }
+  .info-one::before {
+    display: none;
+  }
+  .info-one__text-block {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 0;
+  }
+  .info-one__text-block p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .we-have {
+    margin-bottom: 80px;
+  }
+  .we-have h1 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  .we-have__block {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .we-have__block img {
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+  .we-have__block h2 {
+    font-size: 24px;
+  }
+  .we-have__block p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .text1 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  /* Анкета */
+  .anceta {
+    flex-direction: column;
+    padding: 40px 0;
+    margin-bottom: 60px;
+  }
+  .anceta::before {
+    display: none;
+  }
+  .anceta .carta {
+    display: none; /* карта не нужна на мобилке */
+  }
+  .anceta .input-block {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .anceta .input-block h3 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .anceta__field input {
+    height: 56px;
+    font-size: 16px;
+    padding-left: 20px;
+  }
+  .anceta__field input::placeholder {
+    font-size: 16px;
+  }
+  .anceta__button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .btn-sign-up--btn3 {
+    margin: 0 !important;
+  }
+  .anceta__phoneBtn {
+    position: static !important;
+    margin: 0 !important;
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Футер */
+  .footer {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+  .footer__text1 p {
+    font-size: 16px;
+  }
+  .footer__contacts {
+    justify-content: center;
+  }
+  .footer__text2 {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+  .footer__number-p,
+  .footer__text2 p {
+    font-size: 16px;
+  }
+}

@@ -142,6 +142,55 @@ document.addEventListener('DOMContentLoaded', function () {
             showMaskOnFocus: true
         }).mask(phoneInput);
     }
+    if (window.innerWidth <= 768) {
+        const placeholder = document.querySelector('.menu-burger-placeholder');
+        const header = document.querySelector('header.menu'); // оригинальный хедер
+    
+        if (placeholder && header) {
+          // Создаём бургер-кнопку
+          const burger = document.createElement('button');
+          burger.className = 'menu__burger';
+          burger.innerHTML = '<span></span><span></span><span></span>';
+          burger.setAttribute('aria-label', 'Меню');
+    
+          // Вставляем в placeholder
+          placeholder.appendChild(burger);
+    
+          // Скрываем оригинальный хедер
+          header.style.display = 'none';
+    
+          // Создаём мобильное меню
+          const mobileMenu = header.cloneNode(true);
+          mobileMenu.className = 'menu menu__mobile';
+          mobileMenu.style.display = 'none';
+          mobileMenu.style.position = 'fixed';
+          mobileMenu.style.top = '0';
+          mobileMenu.style.right = '-100%';
+          mobileMenu.style.width = '80%';
+          mobileMenu.style.maxWidth = '300px';
+          mobileMenu.style.height = '100vh';
+          mobileMenu.style.background = '#fff';
+          mobileMenu.style.padding = '80px 20px 20px';
+          mobileMenu.style.boxShadow = '-2px 0 10px rgba(0,0,0,0.1)';
+          mobileMenu.style.zIndex = '1000';
+          mobileMenu.style.transition = 'right 0.3s ease';
+    
+          // Вставляем в body
+          document.body.appendChild(mobileMenu);
+    
+          // Обработчик
+          burger.addEventListener('click', () => {
+            mobileMenu.style.right = mobileMenu.style.right === '0px' ? '-100%' : '0';
+          });
+    
+          // Закрытие при клике вне
+          document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && e.target !== burger) {
+              mobileMenu.style.right = '-100%';
+            }
+          });
+        }
+      }
 });
 
 /* Scroll to anceta function */

@@ -4,6 +4,7 @@
     <!-- Первый экран -->
 
     <section class="intro wrap">
+        <div class="menu-burger-placeholder"></div> 
         <div class="header">
             <a href="#">
                 <img src="{% static 'icon/Logo.svg' %}" alt="">
@@ -177,7 +178,7 @@
             <p>Регулярное участие в чемпионатах и турнирах</p>
         </div>
     </section>
-<!-- Четвертый экран -->
+<!-- Пятый экран -->
 
 
 <section class="info-one wrap">
@@ -188,7 +189,7 @@
 </div>
 <button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
 </section>
-
+<!-- Шестой экран -->
 <section class="we-have wrap">
     <h1 class="we-have-h1">У нас</h1>
     <div class="we-have__block we-have__block--one">
@@ -199,6 +200,7 @@
             <p>Зачастую подготовке вратарей не удается уделить достаточно внимания в рамках тренировочного процесса, поэтому для голкиперов "Адмирал-ВМФ" наши партнеры из Школы вратарского мастерства им. Льва Яшина проводят вратарские тренировки, где ставят вратарскую технику и развивают понимание игры.</p>
         </div>
     </div>
+    <!-- Седьмой экран -->
     <div class="we-have__block we-have__block--two">
         <div class="text">
             <h2>ЛЕТНИЕ УЧЕБНО-ТРЕНИРОВОЧНЫЕ СБОРЫ</h2>
@@ -207,6 +209,7 @@
             <p>Так же для наших воспитанников мы организуем летние и зимние тренировочные сборы и выездные турниры по всей России.</p>
         </div>
     </div>
+    <!-- Восьмой экран -->
     <div class="text1"><h2>РЕГУЛЬРНАЯ ИГРОВАЯ ПРАКТИКА И</h2></div>
     <div class="we-have__block we-have__block--tree">
         <img src="{% static 'img/we-have-img7.png' %}" alt="">
@@ -218,9 +221,9 @@
     </div>
 </section>
 
-
+    <!-- Девятый экран -->
 <section class="anceta wrap" id="anceta">
-    <div class="carta"></div>
+    <div class="carta"></div>  <!-- карта в мобилке не нужна  -->
     <div class="input-block">
         <form method="post" class="anceta__form">
             {% csrf_token %}
