@@ -317,9 +317,9 @@ margin-right: 5%;
   top: 400px;
 }
 .sets .text-block-sets {
-  width: 95%; /* ← растягиваем на всю ширину */
+  width: 100%; /* ← растягиваем на всю ширину */
   padding: 0; /* ← убираем отступы */
-  margin: 0; /* ← убираем внешние отступы */
+  margin: 2px; /* ← убираем внешние отступы */
   position: relative;
 }
 .sets .text-block-sets::before {
@@ -1794,7 +1794,7 @@ h1, h2 {
   flex-direction: column;
   justify-content: flex-start;
   padding: 20px 20px 20px 20px;
-  left: 40px;
+  left: 0;
 }
 
 .main-team-title {
@@ -2228,12 +2228,12 @@ h1, h2 {
   /* Первый слайд - выравнивание текста */
   .text-block-sets {
     width: 100%;
-    padding: 16px 16px 0 !important;
+    padding: 22px 22px 0 !important;
     box-sizing: border-box;
     margin-bottom: 0 !important;
   }
   .text-block-sets h2:first-of-type {
-    text-align: center;
+    text-align: left;
     font-size: 32px;
     font-weight: 900;
     margin-top: 0;
@@ -2241,7 +2241,7 @@ h1, h2 {
   }
   .text-block-sets p:first-of-type {
     text-align: left;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
     opacity: 0.9;
     margin-top: 0;
@@ -2257,7 +2257,7 @@ h1, h2 {
   }
   .text-block-sets p:last-of-type {
     text-align: right;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 300;
     opacity: 0.9;
     margin-top: 0;
@@ -2288,7 +2288,7 @@ h1, h2 {
   .main-team-title,
   .main-team-subtitle,
   .main-team-paragraph {
-    text-align: center !important;
+    text-align: left !important;
     padding: 0 !important;
     max-width: 100% !important;
   }
