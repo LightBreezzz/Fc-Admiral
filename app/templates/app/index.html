@@ -4,7 +4,6 @@
     <!-- Первый экран -->
 
     <section class="intro wrap">
-        <div class="menu-burger-placeholder"></div> 
         <div class="header">
             <a href="#">
                 <img src="{% static 'icon/Logo.svg' %}" alt="">
@@ -17,11 +16,9 @@
         <h2>Футбольная школа</h2>
         <h1>Адмирал-вмф</h1>
         <button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
+        {% include 'includes/header.html' %}
     </section>
 <!-- Первый экран -->
-
-{% include 'includes/header.html' %}
-
 <!-- Второй экран -->
     <section class="philosophy wrap">
         <div class="text-block-philosophy">
@@ -208,15 +205,18 @@
             <p>В нашей школе дети всех возрастов принимают участие в различных турнирах, где закрепляют и развивают свои футбольные навыки.</p>
             <p>Так же для наших воспитанников мы организуем летние и зимние тренировочные сборы и выездные турниры по всей России.</p>
         </div>
+        <img src="{% static 'img/we-have-img6.png' %}" alt="" class="we-have__block--two-img">
     </div>
     <!-- Восьмой экран -->
+    <div class="we-have__block--tree-wrapper">
     <div class="text1"><h2>РЕГУЛЬРНАЯ ИГРОВАЯ ПРАКТИКА И</h2></div>
     <div class="we-have__block we-have__block--tree">
         <img src="{% static 'img/we-have-img7.png' %}" alt="">
         <div class="text">
             <h2>ВЫЕЗДНЫЕ ТУРНИРЫ</h2>
-            <p>Футбол - это спорт, который требует не только быстроты и оригинальности мышления, но и отличной физической формы.</p>
+                <p><span class="we-have__bold">Футбол - это спорт, который требует не только быстроты и оригинальности мышления, но и отличной физической формы.</span></p>
             <p>Для своих воспитанников мы проводим дополнительные тренировки по совершенствованию общей физической подготовки, на которых под руководством специалистов наши игроки развивают силу, скорость и выносливость.</p>
+            </div>
         </div>
     </div>
 </section>

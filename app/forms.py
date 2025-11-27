@@ -1,67 +1,77 @@
 # forms.py
 from django import forms
+from django.core.exceptions import ValidationError
 from .models import JoinRequest
 import re
-from django.core.exceptions import ValidationError
 
 
-def validate_phone(value):
-    if not re.match(r'^\+7\s?\(\d{3}\)\s?\d{3}-\d{2}-\d{2}$', value):
-        raise ValidationError('Номер должен быть в формате: +7 (999) 999-99-99')
-
-
-# В классе формы:
-parent_phone = forms.CharField(
-    validators=[validate_phone],
-    widget=forms.TextInput(attrs={
-        'class': 'anceta__input',
-        'placeholder': '+7 (999) 999-99-99',
-        'inputmode': 'tel'  # ← это даёт цифровую клавиатуру на мобилках
-    })
-)
-
-
-def validate_name(value):
-    if not re.match(r'^[а-яА-ЯёЁ\s]+$', value):
-        raise ValidationError('Имя должно содержать только русские буквы и пробелы')
-
-
-# В форме:
-parent_full_name = forms.CharField(
-    validators=[validate_name],
-    widget=forms.TextInput(attrs={'class': 'anceta__input', 'placeholder': 'ФИО родителя'})
-)
+def validate_name(value: str) -> None:
+    """Разрешаем только русские буквы и пробелы."""
+    if not re.match(r'^[А-Яа-яЁё\s]+$', value):
+        raise ValidationError(
+            'Имя должно содержать только русские буквы и пробелы'
+        )
 
 
 class JoinRequestForm(forms.ModelForm):
-    """Форма заявки на пробную тренировку"""
+    """Форма заявки на пробную тренировку."""
+
+    parent_full_name = forms.CharField(
+        validators=[validate_name],
+        widget=forms.TextInput(
+            attrs={
+                'class': 'anceta__input',
+                'placeholder': 'ФИО родителя*',
+            }
+        ),
+        label='',
+    )
+
+    parent_phone = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                'class': 'anceta__input',
+                'type': 'tel',
+                'placeholder': '+7 (999) 999-99-99',
+                'inputmode': 'tel',
+            }
+        ),
+        label='',
+    )
+
     child_birth_date = forms.DateField(
         widget=forms.DateInput(
             attrs={
-                'type': 'date',  # ← браузер покажет нативный календарь
+                'type': 'date',  # нативный календарь
                 'class': 'anceta__input',
-                'placeholder': 'ДД.ММ.ГГГГ'
+                'placeholder': 'ДД.ММ.ГГГГ',
             }
         ),
-        label='Дата рождения ребёнка',
-        input_formats=['%Y-%m-%d']  # формат, который отправляется
+        label='',
+        input_formats=['%Y-%m-%d'],
     )
 
     class Meta:
         model = JoinRequest
-        fields = ['parent_full_name', 'parent_phone', 'child_full_name', 'child_birth_date', 'branch']
+        fields = [
+            'parent_full_name',
+            'parent_phone',
+            'child_full_name',
+            'child_birth_date',
+            'branch',
+        ]
         widgets = {
-            'parent_full_name': forms.TextInput(attrs={'placeholder': 'ФИО родителя*'}),
-            'parent_phone': forms.TextInput(attrs={'type': 'tel', 'class': 'anceta__input', 'placeholder': 'Контактный телефон*'}),
-            'child_full_name': forms.TextInput(attrs={'placeholder': 'ФИО ребенка*'}),
-            'child_birth_date': forms.TextInput(attrs={'placeholder': 'дд.мм.гггг*'}),
-            'branch': forms.Select(attrs={'placeholder': 'anceta_input anceta_select'}),
+            'child_full_name': forms.TextInput(
+                attrs={
+                    'class': 'anceta__input',
+                    'placeholder': 'ФИО ребёнка*',
+                }
+            ),
+            # branch рендерится через кастомный select в шаблоне,
+            # поэтому отдельный widget не задаём.
         }
         labels = {
-            'parent_full_name': '',
-            'parent_phone': '',
             'child_full_name': '',
-            'child_birth_date': '',
             'branch': '',
         }
 
@@ -76,3 +86,16 @@ class JoinRequestForm(forms.ModelForm):
         if not value:
             raise forms.ValidationError("Пожалуйста, выберите отделение.")
         return value
+
+    def clean_parent_phone(self):
+        value = self.cleaned_data.get('parent_phone', '')
+        if not value:
+            raise forms.ValidationError("Пожалуйста, укажите телефон.")
+        digits = re.sub(r'\D', '', value)
+        if digits.startswith('8') and len(digits) == 11:
+            digits = '7' + digits[1:]
+        if len(digits) != 11 or not digits.startswith('7'):
+            raise forms.ValidationError(
+                'Номер должен быть в формате: +7 (999) 999-99-99'
+            )
+        return f"+{digits}"
