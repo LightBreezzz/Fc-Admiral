@@ -1,0 +1,35 @@
+{% load static %}
+<!-- Бургер-кнопка для мобилок (отдельно от меню) -->
+<button class="mobile-burger" type="button" aria-label="Открыть меню">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- Мобильное меню (выпадает из кнопки) -->
+<div class="mobile-menu">
+  <nav class="mobile-menu__items">
+    <a class="mobile-menu__link" href="{% url 'index' %}">Главная</a>
+    <a class="mobile-menu__link" href="{% url 'coach_cards' %}">Тренерский штаб</a>
+    <a class="mobile-menu__link" href="{% url 'player_cards' %}">Наши ученики</a>
+  </nav>
+  <div class="mobile-menu__social">
+    <a href="https://wa.me/89265975757"><img src="{% static 'icon/WhatsApp icon.svg' %}" alt="WhatsApp"></a>
+    <a href="https://vk.com/fcadmiral"><img src="{% static 'icon/Wk icon.svg' %}" alt="VK"></a>
+    <a href="https://t.me/fcadmiral"><img src="{% static 'icon/Tg icon.svg' %}" alt="Telegram"></a>
+  </div>
+</div>
+
+<!-- Десктопное меню (белая плашка) -->
+<header class="menu wrap">
+  <nav class="menu__items">
+    <a class="menu__link" href="{% url 'index' %}">Главная</a>
+    <a class="menu__link" href="{% url 'coach_cards' %}">Тренерский штаб</a>
+    <a class="menu__link" href="{% url 'player_cards' %}">Наши ученики</a>
+  </nav>
+  <div class="menu__social">
+    <a href="https://wa.me/89265975757"><img src="{% static 'icon/WhatsApp icon.svg' %}" alt=""></a>
+    <a href="https://vk.com/fcadmiral"><img src="{% static 'icon/Wk icon.svg' %}" alt=""></a>
+    <a href="https://t.me/fcadmiral"><img src="{% static 'icon/Tg icon.svg' %}" alt=""></a>
+  </div>
+</header>

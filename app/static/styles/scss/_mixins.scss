@@ -1,0 +1,4 @@
+@mixin text($f-weight, $f-size){
+  font-weight: $f-weight;
+  font-size: $f-size;
+}

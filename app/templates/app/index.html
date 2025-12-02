@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Первый экран -->
+
+    <section class="intro wrap">
+        <div class="header">
+            <a href="#">
+                <img src="{% static 'icon/Logo.svg' %}" alt="">
+            </a>
+            <p class="header__p">м. Царицыно, м. Кантемировская, м. Орехово,<br>м. Коломенская, м. Кленовый бульвар, м. Нагатинский затон</p>
+            <button class="anceta__phoneBtn" type="button">
+            <a class="header__a" href="#">8 (926) 597 57 57</a>
+            </button>
+        </div>
+        <h2>Футбольная школа</h2>
+        <h1>Адмирал-вмф</h1>
+        <button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
+        {% include 'includes/header.html' %}
+    </section>
+<!-- Первый экран -->
+<!-- Второй экран -->
+    <section class="philosophy wrap">
+        <div class="text-block-philosophy">
+            <h2 class="text-block-philosophy_h">НОВОЕ ОТДЕЛЕНИЕ <br> СТАДИОН "ОГОНЁК"</h2>
+            <p class="text-block-philosophy_p">
+                <span class="text-block-philosophy_p bold">С 5 ноября открыто новое отделение ФШ "Адмирал-ВМФ" на базе современного стадиона "Огонек"</p>
+            <p class="text-block-philosophy_p">
+                <span class="text-block-philosophy_p bold">Данное отделение станет базой для подготовки наших футболистов к участию в соревнованиях под эгидой Московской федерации футбола!</p>
+            <p class="text-block_p-philosophy">
+                <span class="text-block-philosophy_p bold">Инфраструктура стадиона позволит осуществлять качественную подготовку спортсменов в формате 11х11 и перейти на более профессиональный уровень.</p>
+        </div>
+        <div class="photo">
+        <img src="{% static 'img/EEES0740.png' %}" alt="">
+        </div>
+    </section>
+<!-- Второй экран -->
+
+<!-- Третий экран -->
+    <section class="sets wrap">
+        <div class="news-slider swiper">
+        <div class="swiper-wrapper">
+            <!-- Слайд 1 -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/set-img3.png' %}')">
+            <div class="text-block-sets news-content">
+                <h2 class="text-block-sets__h2">НАБОР ВОСПИТАННИКОВ С 3х ЛЕТ</h2>
+                <p>Отличительной особенностью нашей школы является круглогодичный набор юных футболистов. Вы всегда можете записаться на пробную тренировку, после которой ребенок откроет для себя новый и увлекательный мир футбола!</p>
+                <h2 class="text-block-sets__h2">МЫ ПРИГЛАШАЕМ ФУТБОЛИСТОВ</h2>
+                <p>
+                в одно из наших отделений: <br>
+                "Адмирал Арена" (ул. Затонная, д.22) <br>
+                Школа №0463 (ул. Новинки, д.8) <br>
+                Откройте для себя удивительный мир футбола вместе с нами!
+                </p>
+            </div>
+            </div>
+    
+            <!-- Слайд 2: Fathers Club -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="news-content">
+                <div class="fathers-club-block">
+                <div class="fathers-club-placeholder"></div>
+                <div class="fathers-club-text">
+                    <div class="fathers-club-title">
+                    <div class="fathers-club-title-line1">ОТЦОВСКИЙ</div>
+                    <div class="fathers-club-title-line2">ФУТБОЛЬНЫЙ КЛУБ</div>
+                    </div>
+                    <p class="fathers-club-paragraph">
+                    <span>Каждый ребенок мечтает увидеть, как его отец играет в футбол и празднует победы.<br><br>Отцам наших воспитанников мы предлагаем присоединиться к отцовской команде.<br><br></span>
+                    <span class="fathers-club-bold">Тренировки, регулярная игровая практика и дружеская атмосфера мужского коллектива</span>
+                    <span> позволят не только отвлечься от повседневных забот, но и дадут лишний повод вашим детям гордиться своими отцами!</span>
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
+    
+            <!-- Слайд 3: Admirals Championship -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="news-content">
+                <div class="admirals-championship-block">
+                <div class="admirals-top-right">
+                    <div class="admirals-title-top">ФК "АДМИРАЛ-ВМФ" 11×11</div>
+                    <div class="admirals-title-bottom">
+                    <span class="admirals-title-white">ИГРАЕТ И</span>
+                    <span class="admirals-title-green"> ВЫИГРЫВАЕТ</span>
+                    </div>
+                    <p class="admirals-paragraph-right">
+                    В июне стартовал чемпионат МФЛ 11х11, в котором команда воспитанников ФК "Адмирал-ВМФ" впервые<br>-
+                    принимает участие.
+                    </p>
+                </div>
+                <div class="admirals-left">
+                    <div class="admirals-title-left">ПОСЛЕ 7 ПРОВЕДЕННЫХ МАТЧЕЙ</div>
+                    <div class="admirals-title-green-left">7 ПОБЕД, И БОЛЕЕ 30 МЯЧЕЙ</div>
+                    <p class="admirals-paragraph-left">
+                    <span>Следите за новостями турнира и жизнью команды в нашей группе ВК: ФК «Адмирал-ВМФ» <br><br>Будем рады видеть вас на трибунах <br></span>
+                    <span class="admirals-bold">"Один район - одна команда!"</span>
+                    </p>
+                </div>
+                </div>
+            </div>
+            </div>
+    
+            <!-- Слайд 4: Women's Club -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="news-content">
+                <div class="womens-club-block">
+                <div class="womens-club-text">
+                    <div class="womens-club-title">
+                    <div class="womens-club-title-line1">ЖЕНСКИЙ</div>
+                    <div class="womens-club-title-line2">ФУТБОЛЬНЫЙ КЛУБ</div>
+                    </div>
+                    <p class="womens-club-paragraph">
+                    Создавая женскую футбольную команду для мам воспитанников "Адмирал ВМФ" мы руководствовались двумя идеями. Во-первых, футбол - это спорт, доступный каждому. Во-вторых, гораздо проще понять и поддержать своего ребенка, если понимаешь спорт, которым он занимается. Наши мамы дважды в неделю тренируются под руководством опытного тренера, и регулярно участвуют в турнирах. Будем рады видеть и вас в нашей женской команде!
+                    </p>
+                </div>
+                <div class="womens-club-placeholders">
+                    <div class="womens-club-placeholder womens-club-placeholder-top"></div>
+                    <div class="womens-club-placeholder womens-club-placeholder-bottom"></div>
+                </div>
+                </div>
+            </div>
+            </div>
+    
+            <!-- Слайд 5: Main Team -->
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="news-content">
+                <div class="main-team-block">
+                <div class="main-team-title">Основная команда ФШ «Адмирал‑ВМФ»:</div>
+                <div class="main-team-subtitle">гордость школы и пример для подражания</div>
+                <p class="main-team-paragraph">
+                    Основная команда «Адмирал‑ВМФ» - это визитная карточка нашей школы и живое воплощение её ценностей. Одна из главных особенностей команды - её органичный рост изнутри. Мы гордимся тем, что состав регулярно пополняется талантливыми выпускниками футбольной школы!&nbsp;&nbsp;<br><br>Сегодняшние воспитанники, глядя на основную команду, видят своё будущее в футболе! А сегодняшние игроки основы - это завтрашние наставники и хранители традиций нашей школы!
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+<!-- Третий экран -->
+
+<!-- Четвертый экран -->
+    <section class="plus wrap">
+        <div class="plus__item">
+            <img src="{% static 'icon/plus/one.svg' %}" alt="">
+            <p>Современная методика подготовки</p>
+        </div>
+        <div class="plus__item">
+            <img src="{% static 'icon/plus/two.svg' %}" alt="">
+            <p>Работаем с 2009 года</p>
+        </div>
+        <div class="plus__item">
+            <img src="{% static 'icon/plus/tree.svg' %}" alt="">
+            <p>Удобные локации</p>
+        </div>
+        <div class="plus__item">
+            <img src="{% static 'icon/plus/four.svg' %}" alt="">
+            <p>Современный инвентарь</p>
+        </div>
+        <div class="plus__item">
+            <img src="{% static 'icon/plus/five.svg' %}" alt="">
+            <p>С каждой командой работают два тренера</p>
+        </div>
+        <div class="plus__item">
+            <img src="{% static 'icon/plus/six.svg' %}" alt="">
+            <p>Школа вратарей</p>
+        </div>
+        <div class="plus__item">
+            <img src="{% static 'icon/plus/seven.svg' %}" alt="">
+            <p>Учебно-тренировочные сборы</p>
+        </div>
+        <div class="plus__item">
+            <img src="{% static 'icon/plus/eigth.svg' %}" alt="">
+            <p>Регулярное участие в чемпионатах и турнирах</p>
+        </div>
+    </section>
+<!-- Пятый экран -->
+
+
+<section class="info-one wrap">
+<div class="info-one__text-block">
+    <p>За время обучения футболу игрок проходит через разные форматы игры.</p>
+    <p>Малыши начинают играть с двух игроков в поле, и чем старше становится ребенок, тем больше игроков одновременно допускается на поле во время игры.</p>
+    <p>В ФШ "Адмирал-ВМФ" юные футболисты проходят все этапы обучения, вплоть до полноформатного футбола 11х11 в старших возрастах. Это позволяет гармонично развиваться, и на финальном этапе обучения получить спортсмена, способного выступать на высоком уровне.</p>
+</div>
+<button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
+</section>
+<!-- Шестой экран -->
+<section class="we-have wrap">
+    <h1 class="we-have-h1">У нас</h1>
+    <div class="we-have__block we-have__block--one">
+        <img src="{% static 'img/we-have-img5.png' %}" alt="">
+        <div class="text">
+            <h2>Школа вратарей</h2>
+            <p> <span class="we-have__bold">Вратарь - особенный игрок в команде.</span></p>
+            <p>Зачастую подготовке вратарей не удается уделить достаточно внимания в рамках тренировочного процесса, поэтому для голкиперов "Адмирал-ВМФ" наши партнеры из Школы вратарского мастерства им. Льва Яшина проводят вратарские тренировки, где ставят вратарскую технику и развивают понимание игры.</p>
+        </div>
+    </div>
+    <!-- Седьмой экран -->
+    <div class="we-have__block we-have__block--two">
+        <div class="text">
+            <h2>ЛЕТНИЕ УЧЕБНО-ТРЕНИРОВОЧНЫЕ СБОРЫ</h2>
+            <p>Неотъемлемой частью тренировок является получение опыта детьми в рамках соревнований.</p>
+            <p>В нашей школе дети всех возрастов принимают участие в различных турнирах, где закрепляют и развивают свои футбольные навыки.</p>
+            <p>Так же для наших воспитанников мы организуем летние и зимние тренировочные сборы и выездные турниры по всей России.</p>
+        </div>
+        <img src="{% static 'img/we-have-img6.png' %}" alt="" class="we-have__block--two-img">
+    </div>
+    <!-- Восьмой экран -->
+    <div class="we-have__block--tree-wrapper">
+    <div class="text1"><h2>РЕГУЛЬРНАЯ ИГРОВАЯ ПРАКТИКА И</h2></div>
+    <div class="we-have__block we-have__block--tree">
+        <img src="{% static 'img/we-have-img7.png' %}" alt="">
+        <div class="text">
+            <h2>ВЫЕЗДНЫЕ ТУРНИРЫ</h2>
+                <p><span class="we-have__bold">Футбол - это спорт, который требует не только быстроты и оригинальности мышления, но и отличной физической формы.</span></p>
+            <p>Для своих воспитанников мы проводим дополнительные тренировки по совершенствованию общей физической подготовки, на которых под руководством специалистов наши игроки развивают силу, скорость и выносливость.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Девятый экран -->
+<section class="anceta wrap" id="anceta">
+    <div class="carta"></div>  <!-- карта в мобилке не нужна  -->
+    <div class="input-block">
+        <form method="post" class="anceta__form">
+            {% csrf_token %}
+            <h3>Присоединяйся к нам!</h3>
+
+            {% if form.non_field_errors %}
+                <div class="form-error form-error--non-field">
+                    {% for error in form.non_field_errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- ФИО родителя -->
+            <div class="anceta__field{% if form.parent_full_name.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
+                    <p class="form-error">{{ form.parent_full_name.errors|striptags }}</p>
+                {% endif %}
+                {{ form.parent_full_name }}
+            </div>
+
+            <!-- Телефон -->
+            <div class="anceta__field{% if form.parent_phone.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
+                    <p class="form-error">{{ form.parent_phone.errors|striptags }}</p>
+                {% endif %}
+                {{ form.parent_phone }}
+            </div>
+
+            <!-- ФИО ребенка -->
+            <div class="anceta__field{% if form.child_full_name.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
+                    <p class="form-error">{{ form.child_full_name.errors|striptags }}</p>
+                {% endif %}
+                {{ form.child_full_name }}
+            </div>
+
+            <!-- Дата рождения -->
+            <div class="anceta__field{% if form.child_birth_date.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
+                    <p class="form-error">{{ form.child_birth_date.errors|striptags }}</p>
+                {% endif %}
+                {{ form.child_birth_date }}
+            </div>
+
+            <!-- Отделение -->
+            <div class="anceta__field{% if form.branch.errors %} has-error{% endif %}">
+                {% if form.branch.errors %}
+                    <p class="form-error">{{ form.branch.errors|striptags }}</p>
+                {% endif %}
+                <div class="select-wrapper" id="branch-select">
+                    <div class="select-arrow__control">
+                        <span class="select-arrow__value">Выбрать отделение*</span>
+                        <span class="select-arrow__icon">▶</span>
+                    </div>
+                    <ul class="select-arrow__menu">
+                        <li class="select-arrow__option" data-value="">Выбрать отделение</li>
+                        <li class="select-arrow__option" data-value="centr">Царицыно</li>
+                        <li class="select-arrow__option" data-value="sever">Коломенская</li>
+                    </ul>
+                    <!-- Скрытый input для отправки в форму -->
+                    <input type="hidden" name="branch" id="branch-input">
+                </div>
+            </div>
+
+            <!-- Кнопки -->
+            <div class="anceta__button-group">
+                <button type="submit" class="btn-sign-up btn-sign-up--btn3">записаться</button>
+                <button class="anceta__phoneBtn" type="button">
+                    <img src="{% static 'icon/phone.svg' %}" alt="">
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+{% if messages %}
+  {% for message in messages %}
+    {% if '✅ Заявка успешно отправлена!' in message.message %}
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const successModal = document.getElementById('successModal');
+          if (successModal) {
+            successModal.style.display = 'flex';
+          }
+        });
+      </script>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% endblock %}

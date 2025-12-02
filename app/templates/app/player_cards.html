@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_head %}
+<link rel="preload" as="image" href="{% static 'icon/image.png' %}">
+{% endblock %}
+{% block content %}
+<!-- Игроки -->
+<section class="coach-cards-section" style="background-color: #2d5016;">
+        {% include 'includes/header.html' %}
+        <div class="coach-cards wrap">
+            <div class="school-banner">
+                <h1 class="school-banner__title">НАША ШКОЛА</h1>
+                <p class="school-banner__subtitle">- ЭТО ПЕРВЫЙ ШАГ НА ПУТИ В ЛУЧШИЕ АКАДЕМИИ</p>
+            </div>
+            <div class="coach-cards-grid">
+                {% for player in players %}
+                <div class="coach-card">
+                    <div class="coach-card__photo">
+                        {% if player.photo %}
+                            <img src="{{ player.photo.url }}" alt="{{ player.full_name }}">
+                        {% else %}
+                            <div class="coach-card__photo-placeholder"></div>
+                        {% endif %}
+                    </div>
+                    <div class="coach-card__info">
+                        {% with name_parts=player.get_name_parts %}
+                            <h2 class="coach-card__surname">{{ name_parts.surname|upper }}</h2>
+                            {% if name_parts.name %}
+                                <h3 class="coach-card__name">{{ name_parts.name|upper }}</h3>
+                            {% endif %}
+                        {% endwith %}
+                        <p class="coach-card__position">Возраст: {{ player.age }} лет</p>
+                        {% if player.coach %}
+                            <p class="coach-card__qualification">Тренер: {{ player.coach.full_name }}</p>
+                        {% endif %}
+                        {% if player.birth_date %}
+                            <p class="coach-card__experience">Дата рождения: {{ player.birth_date|date:"d.m.Y" }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% empty %}
+                <p class="coach-cards-empty">Игроки пока не добавлены.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Игроки -->
+{% endblock %}
+
