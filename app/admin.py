@@ -6,7 +6,7 @@ from .models import Coach, Player, JoinRequest
 
 @admin.register(Coach)
 class CoachAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'position', 'qualification', 'work_start_year', 'photo_preview', 'order',)
+    list_display = ('full_name', 'position', 'education', 'qualification', 'work_start_year', 'photo_preview', 'order',)
     list_filter = ('position', 'qualification')
     search_fields = ('full_name', 'position', 'qualification')
     list_editable = ('order',)  # можно менять прямо в списке
@@ -17,7 +17,7 @@ class CoachAdmin(admin.ModelAdmin):
             'fields': ('full_name', 'position')
         }),
         ('Профессиональные данные', {
-            'fields': ('qualification', 'work_start_year')
+            'fields': ('qualification', 'education', 'work_start_year')
         }),
         ('Фотография', {
             'fields': ('photo', 'photo_preview'),
