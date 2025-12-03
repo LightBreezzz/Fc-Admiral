@@ -237,11 +237,11 @@ body {
 }
 
 /* Overlap the header over the bottom of the hero by half height */
-.intro + .menu {
-  margin-top: -88px;
+/* .intro + .menu {
+  margin-top: -60px;
   position: relative;
   z-index: 2;
-}
+} */
 
 .philosophy {
   margin-top: 180px;
@@ -282,6 +282,7 @@ margin-right: 5%;
   display: flex;
   justify-content: end;
 }
+
 .sets::before {
   content: "";
   position: absolute;
@@ -377,7 +378,7 @@ margin-right: 5%;
 .swiper-button-prev,
 .swiper-button-next {
   color: #ffffff; /* цвет стрелок */
-  background: rgba(0, 0, 0, 0.3);
+  /* background: rgba(0, 0, 0, 0.3); */
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -391,7 +392,7 @@ margin-right: 5%;
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.6); */
   opacity: 1;
 }
 
@@ -485,8 +486,8 @@ margin-right: 5%;
 .info-one {
   position: relative;
   display: flex;
-  margin-bottom: 308px;
-  min-height: 854px;
+  /* margin-bottom: 308px; */
+  min-height: 769px;
   overflow: hidden;
   justify-content: center;
   /* gap: 100px; */
@@ -536,7 +537,7 @@ margin-right: 5%;
 }
 .info-one-div {
   display: flex;
-  gap: 200px;
+  gap: 180px;
 }
 
 .we-have {
@@ -599,8 +600,8 @@ margin-right: 5%;
   content: "";
   position: absolute;
   z-index: 1;
-  width: 1920px;
-  height: 854px;
+  width: 80%;
+  height: 100%;
   background: url("/static/img/we-have-img6.png") no-repeat;
   left: 720px;
   top: 35px;
@@ -2138,7 +2139,7 @@ h1, h2 {
     transform: scale(1.1);
   }
   .intro h2 {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 900;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -2149,19 +2150,21 @@ h1, h2 {
     max-width: 100%;
     box-sizing: border-box;
     width: fit-content;
+    margin-left: 15px;
   }
   .intro h1 {
-    font-size: 48px;
+    font-size: 39px;
     font-weight: 900;
     color: #FFFFFF;
     text-transform: uppercase;
-    margin: 5px auto 0 auto;
+    margin: 5px 0 0 9px;
     padding: 0 20px;
     line-height: 1.2;
     text-align: center;
     max-width: 100%;
     box-sizing: border-box;
     width: fit-content;
+    /* margin-left: 3px; */
   }
   .intro .btn-sign-up {
     font-weight: 500;
@@ -2465,7 +2468,7 @@ h1, h2 {
   .info-one {
     margin-bottom: 40px;
     text-align: left;
-    min-height: 500px;
+    min-height: 324px;
     padding: 40px 20px;
     box-sizing: border-box;
   }
@@ -2477,6 +2480,9 @@ h1, h2 {
     top: 0;
     background-size: cover;
     background-position: center !important ;
+  }
+  .info-one-div{
+    display: block;
   }
   .info-one::after {
     display: block;
