@@ -10,9 +10,12 @@
         z-index: -1;
         width: 1920px;
         height: 854px;
-        background: url('/app/templates/app/assets/img/set-img3.png') no-repeat;
+        // background: url('/app/templates/app/assets/img/set-img3.png') no-repeat;
         left: -92px;
         top: 0px
+    }
+    body {
+        background-color: aqua;
     }
 
     .arrow{

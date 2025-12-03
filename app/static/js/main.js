@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.news-slider', {
         loop: true,
         autoplay: {
-            delay: 15000,
+            delay: 150000000,
             disableOnInteraction: false,
         },
         navigation: {

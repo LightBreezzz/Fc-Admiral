@@ -3,7 +3,7 @@
 {% block content %}
     <!-- Первый экран -->
 
-    <section class="intro wrap">
+    <section class="intro">
         <div class="header">
             <a href="#">
                 <img src="{% static 'icon/Logo.svg' %}" alt="">
@@ -13,9 +13,11 @@
             <a class="header__a" href="#">8 (926) 597 57 57</a>
             </button>
         </div>
-        <h2>Футбольная школа</h2>
-        <h1>Адмирал-вмф</h1>
-        <button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
+        <div class="wrap">
+            <h2>Футбольная школа</h2>
+            <h1>Адмирал-вмф</h1>
+            <button class="btn-sign-up" onclick="scrollToAnceta()">записаться</button>
+        </div>
         {% include 'includes/header.html' %}
     </section>
     <!-- Первый экран -->
@@ -37,26 +39,26 @@
 <!-- Второй экран -->
 
 <!-- Третий экран -->
-    <section class="sets wrap">
+    <section class="sets">
         <div class="news-slider swiper">
         <div class="swiper-wrapper">
             <!-- Слайд 1 -->
-            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/set-img3.png' %}')">
-            <div class="text-block-sets news-content">
-                <h2 class="text-block-sets__h2">НАБОР ВОСПИТАННИКОВ С 3х ЛЕТ</h2>
-                <p>Отличительной особенностью нашей школы является круглогодичный набор юных футболистов. Вы всегда можете записаться на пробную тренировку, после которой ребенок откроет для себя новый и увлекательный мир футбола!</p>
-                <h2 class="text-block-sets__h2">МЫ ПРИГЛАШАЕМ ФУТБОЛИСТОВ</h2>
-                <p>
-                в одно из наших отделений: <br>
-                "Адмирал Арена" (ул. Затонная, д.22) <br>
-                Школа №0463 (ул. Новинки, д.8) <br>
-                Откройте для себя удивительный мир футбола вместе с нами!
-                </p>
-            </div>
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/set-img3.png' %}'); justify-content: center;">
+                <div class="text-block-sets news-content">
+                    <h2 class="text-block-sets__h2">НАБОР ВОСПИТАННИКОВ С 3х ЛЕТ</h2>
+                    <p>Отличительной особенностью нашей школы является круглогодичный набор юных футболистов. Вы всегда можете записаться на пробную тренировку, после которой ребенок откроет для себя новый и увлекательный мир футбола!</p>
+                    <h2 class="text-block-sets__h2">МЫ ПРИГЛАШАЕМ ФУТБОЛИСТОВ</h2>
+                    <p>
+                    в одно из наших отделений: <br>
+                    "Адмирал Арена" (ул. Затонная, д.22) <br>
+                    Школа №0463 (ул. Новинки, д.8) <br>
+                    Откройте для себя удивительный мир футбола вместе с нами!
+                    </p>
+                </div>
             </div>
     
             <!-- Слайд 2: Fathers Club -->
-            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}'); justify-content: center;">
             <div class="news-content">
                 <div class="fathers-club-block">
                 <div class="fathers-club-placeholder"></div>
@@ -76,7 +78,7 @@
             </div>
     
             <!-- Слайд 3: Admirals Championship -->
-            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}'); justify-content: center;">
             <div class="news-content">
                 <div class="admirals-championship-block">
                 <div class="admirals-top-right">
@@ -103,7 +105,7 @@
             </div>
     
             <!-- Слайд 4: Women's Club -->
-            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}'); justify-content: center;">
             <div class="news-content">
                 <div class="womens-club-block">
                 <div class="womens-club-text">
@@ -124,7 +126,7 @@
             </div>
     
             <!-- Слайд 5: Main Team -->
-            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}')">
+            <div class="swiper-slide news-item" style="background-image: url('{% static 'img/image.png' %}'); justify-content: center;">
             <div class="news-content">
                 <div class="main-team-block">
                 <div class="main-team-title">Основная команда ФШ «Адмирал‑ВМФ»:</div>
@@ -137,8 +139,8 @@
             </div>
         </div>
                 <!-- Кнопки навигации -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
         </div>
     </section>
 <!-- Третий экран -->
@@ -181,8 +183,8 @@
 <!-- Пятый экран -->
 
 
-<section class="info-one wrap">
-<div class="info-one-div">
+<section class="info-one ">
+<div class="info-one-div wrap">
     <div class="info-one__text-block">
         <p>За время обучения футболу игрок проходит через разные форматы игры.</p>
         <p>Малыши начинают играть с двух игроков в поле, и чем старше становится ребенок, тем больше игроков одновременно допускается на поле во время игры.</p>
@@ -227,7 +229,8 @@
 </section>
 
     <!-- Девятый экран -->
-<section class="anceta wrap" id="anceta">
+<section class="anceta" id="anceta">
+    <div class="anceta-div wrap">
     <div class="carta"></div>  <!-- карта в мобилке не нужна  -->
     <div class="input-block">
         <form method="post" class="anceta__form">
@@ -302,6 +305,7 @@
                 </button>
             </div>
         </form>
+    </div>
     </div>
 </section>
 {% if messages %}
