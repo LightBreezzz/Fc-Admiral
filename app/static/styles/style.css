@@ -243,7 +243,7 @@ body {
 }
 
 .philosophy {
-  margin-top: 104px;
+  margin-top: 180px;
   margin-bottom: 108px;
   display: flex;
   /* justify-content: space-between; */
@@ -483,7 +483,7 @@ margin-right: 5%;
 
 .info-one {
   position: relative;
-  margin-bottom: 308px;
+  margin-bottom: 100px;
   min-height: 854px;
   overflow: hidden;
 }
@@ -547,7 +547,7 @@ margin-right: 5%;
   font-size: 64px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 103px;
+  margin-bottom: 40px;
 }
 .we-have {
   margin-bottom: 60px;
@@ -562,7 +562,7 @@ margin-right: 5%;
   font-weight: 900;
   font-size: 64px;
   text-transform: uppercase;
-  padding-bottom: 30px;
+  text-align: center;
 }
 .we-have__block p {
   font-weight: 300;
@@ -580,6 +580,7 @@ margin-right: 5%;
 }
 .we-have__block--two {
   position: relative;
+  margin-top: 80px;
 }
 .we-have__block--two-img {
   display: none;
@@ -651,34 +652,48 @@ margin-right: 5%;
 .anceta .input-block h3 {
   font-weight: 900;
   font-size: 32px;
-  color: #000000;
+  color: #FFFFFF;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 47px;
 }
 .anceta .input-block .anceta__field input,
+.anceta .input-block .anceta__field input[type="text"],
+.anceta .input-block .anceta__field input[type="tel"],
+.anceta .input-block .anceta__field input[type="date"],
 .anceta .input-block .anceta__field select {
   width: 100%;
   height: 90px;
   border-radius: 100px;
   background-color: #F1F1F1;
   border: none;
+  font-family: "Manrope", sans-serif;
   font-weight: 300;
   font-size: 24px;
-  color: #000000;
   padding-left: 67px;
   box-sizing: border-box;
   margin-bottom: 21px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
+/* Более темный цвет для полей, кроме даты рождения */
+.anceta .input-block .anceta__field input.anceta__input,
+.anceta .input-block .anceta__field input[type="text"].anceta__input,
+.anceta .input-block .anceta__field input[type="tel"].anceta__input {
+  color: #1a1a1a !important;
+}
+
 .anceta .input-block input::placeholder {
+  font-family: "Manrope", sans-serif;
   font-weight: 300;
   font-size: 24px;
   color: #626262;
 }
 
 .anceta .input-block input.anceta__input::placeholder {
+  font-family: "Manrope", sans-serif;
   font-weight: 300;
   font-size: 24px;
   color: #626262;
@@ -712,13 +727,43 @@ margin-right: 5%;
   outline: 3px solid #FFFFFF;
 }
 .anceta__field input[type="date"] {
-  color: #000000;
-  font-family: inherit;
+  color: #666666 !important;
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  position: relative;
+  padding-left: 90px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.anceta__field input[type="date"]::-webkit-datetime-edit {
+  color: #666666 !important;
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.anceta__field input[type="date"]::-webkit-datetime-edit-text {
+  color: #666666 !important;
+  font-weight: 300;
+}
+
+.anceta__field input[type="date"]::-webkit-datetime-edit-month-field,
+.anceta__field input[type="date"]::-webkit-datetime-edit-day-field,
+.anceta__field input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #666666 !important;
+  font-family: "Manrope", sans-serif;
   font-size: 24px;
   font-weight: 300;
 }
 .anceta__field input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(18%) sepia(8%) saturate(9%) hue-rotate(135deg) brightness(90%) contrast(85%);
+  position: absolute;
+  left: 30px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 .select-wrapper {
   position: relative;
@@ -1509,6 +1554,10 @@ h1, h2 {
   font-weight: 800;
 }
 
+.admirals-divider {
+  display: none;
+}
+
 /* Responsive adjustments for Admirals Championship Block */
 @media (max-width: 1600px) {
   .admirals-title-top,
@@ -1592,6 +1641,9 @@ h1, h2 {
   .admirals-paragraph-left {
     text-align: center;
     font-size: 18px;
+  }
+  .admirals-divider {
+    display: none;
   }
 }
 
@@ -1916,7 +1968,7 @@ h1, h2 {
     height: auto;
     min-height: 100vh;
     padding: 0;
-    text-align: left;
+    text-align: center;
     position: relative;
   }
   .intro::before {
@@ -2077,12 +2129,10 @@ h1, h2 {
     font-weight: 900;
     color: #FFFFFF;
     text-transform: uppercase;
-    margin: 0 auto;
+    margin: 190px auto 0 auto;
     padding: 0 20px;
-    margin-top: 190px;
-    margin-left: 30px;
     line-height: 1.2;
-    text-align: left;
+    text-align: center;
     max-width: 100%;
     box-sizing: border-box;
     width: fit-content;
@@ -2092,10 +2142,8 @@ h1, h2 {
     font-weight: 900;
     color: #FFFFFF;
     text-transform: uppercase;
-    margin: 0 auto;
+    margin: 5px auto 0 auto;
     padding: 0 20px;
-    margin-top: 5px;
-    margin-left: 30px;
     line-height: 1.2;
     text-align: center;
     max-width: 100%;
@@ -2103,7 +2151,6 @@ h1, h2 {
     width: fit-content;
   }
   .intro .btn-sign-up {
-    font-size: 20px;
     font-weight: 500;
     padding: 24px 48px;
     margin: 120px auto 0;
@@ -2128,7 +2175,7 @@ h1, h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 120px;
     margin-bottom: 80px;
   }
 /* Скрыть элементы только на мобильных (ширина ≤ 768px) */
@@ -2136,6 +2183,13 @@ h1, h2 {
   .intro .header__p,
   .intro .anceta__phoneBtn {
     display: none;
+  }
+  /* Центрирование текста во всех кнопках btn-sign-up на мобильных */
+  .btn-sign-up {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
@@ -2283,8 +2337,6 @@ h1, h2 {
   }
   .fathers-club-text,
   .womens-club-text,
-  .admirals-top-right,
-  .admirals-left,
   .main-team-title,
   .main-team-subtitle,
   .main-team-paragraph {
@@ -2292,12 +2344,78 @@ h1, h2 {
     padding: 0 !important;
     max-width: 100% !important;
   }
+  /* Стили для мобильной версии admirals-championship-block */
+  .admirals-championship-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 20px !important;
+    padding: 20px 16px !important;
+    width: 100% !important;
+    min-height: auto !important;
+    position: relative !important;
+  }
+  .admirals-top-right,
+  .admirals-left {
+    position: relative !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    text-align: center !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    padding: 0 !important;
+  }
+  .admirals-divider {
+    display: block !important;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 12px 0 16px 0 !important;
+  }
+  .admirals-title-top {
+    text-align: left !important;
+    font-size: 32px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+  }
+  .admirals-title-bottom {
+    text-align: left !important;
+    font-size: 32px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 16px !important;
+  }
+  .admirals-title-left {
+    text-align: right !important;
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+  }
+  .admirals-title-green-left {
+    text-align: right !important;
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+    color: #00ff00 !important;
+  }
+  .admirals-paragraph-right {
+    text-align: left !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+  }
+  .admirals-paragraph-left {
+    text-align: right !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
   .fathers-club-title-line1,
   .fathers-club-title-line2,
-  .admirals-title-top,
-  .admirals-title-bottom,
-  .admirals-title-left,
-  .admirals-title-green-left,
   .womens-club-title-line1,
   .womens-club-title-line2,
   .main-team-title,
@@ -2305,8 +2423,6 @@ h1, h2 {
     font-size: 24px !important;
   }
   .fathers-club-paragraph,
-  .admirals-paragraph-right,
-  .admirals-paragraph-left,
   .womens-club-paragraph,
   .main-team-paragraph {
     font-size: 16px !important;
@@ -2334,7 +2450,7 @@ h1, h2 {
 
   /* Информация и "У нас" */
   .info-one {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     text-align: left;
     min-height: 500px;
     padding: 40px 20px;
@@ -2369,18 +2485,21 @@ h1, h2 {
     right: auto;
     bottom: auto;
     margin-top: 36px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: calc(100% - 40px);
     max-width: 360px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
   .we-have {
     margin-bottom: 32px;
   }
   .we-have h1 {
     font-size: 28px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .we-have__block {
     flex-direction: column;
@@ -2412,6 +2531,7 @@ h1, h2 {
   .we-have__block--two {
     display: flex;
     flex-direction: column;
+    margin-top: 80px;
   }
   .we-have__block--two::before {
     display: none;
@@ -2446,7 +2566,7 @@ h1, h2 {
   .we-have__block p {
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: 16px;
+
   }
   .we-have__block .we-have__bold {
     font-weight: 900;
@@ -2544,6 +2664,9 @@ h1, h2 {
     margin: 0 !important;
     width: calc(100% - 80px);
     justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
   }
   .anceta__phoneBtn {
     position: static !important;
