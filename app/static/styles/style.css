@@ -2652,6 +2652,8 @@ h1, h2 {
 
   /* Анкета */
   .anceta-div {
+    -webkit-appearance: none;
+    appearance: none;
     flex-direction: column;
     padding: 40px 0;
     margin-bottom: 60px;
@@ -2705,6 +2707,8 @@ h1, h2 {
     align-items: center;
   }
   .anceta__phoneBtn {
+    -webkit-appearance: none;
+    appearance: none;
     position: static !important;
     margin: 0 !important;
     width: 60px;
@@ -2745,6 +2749,8 @@ h1, h2 {
     align-items: flex-start;
   }
   .footer__text2 .anceta__phoneBtn {
+    -webkit-appearance: none;
+    appearance: none;
     width: auto;
     height: auto;
     padding: 0;
