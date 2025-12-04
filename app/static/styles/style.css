@@ -2772,3 +2772,40 @@ h1, h2 {
     font-size: 16px;
   }
 }
+/* === Запреты и сбросы для Safari (особенно iOS) === */
+
+/* Отключаем нативный внешний вид элементов форм */
+input, textarea, select, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0; /* Safari часто добавляет скругления */
+}
+
+/* Отключаем тап-подсветку при нажатии */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Запрещаем масштабирование при фокусе на input (Safari на iOS увеличивает шрифт) */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input, textarea, select {
+    font-size: 16px !important; /* Safari не масштабирует, если font-size >= 16px */
+  }
+}
+
+/* Отключаем тени и фон у кнопок в Safari */
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  background: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+/* Убираем обводку/внешний вид у select */
+select {
+  background: none;
+  padding: 0;
+}
