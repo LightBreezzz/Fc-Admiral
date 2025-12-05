@@ -2545,12 +2545,12 @@ h1, h2 {
   .we-have__block--one .text {
     display: contents;
   }
-  .we-have__block--one .text h2 h3 {
+  .we-have__block--one .text h2 {
     order: 1;
     width: 100%;
   }
 
-  .text h2 h3{
+  .text h2{
     text-align: center !important;
   }
   .we-have__block--one img {
@@ -2574,7 +2574,7 @@ h1, h2 {
   .we-have__block--two .text {
     display: contents;
   }
-  .we-have__block--two .text h2 h3 {
+  .we-have__block--two .text h2 {
     order: 1;
     width: 100%;
   }
